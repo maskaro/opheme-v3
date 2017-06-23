@@ -1,0 +1,43 @@
+{
+  "name": "oPheme",
+  "version": "3.0",
+  "description": "oPheme Social Media Marketing Tool",
+  "main": "public/index.php",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "keywords": [
+    "opheme"
+  ],
+  "authors": [
+    "Opheme Limited"
+  ],
+  "license": "Proprietary Code",
+  "homepage": "http://www.opheme.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.*",
+    "jquery-validate": "~1.13.*",
+    "timeago": "~1.4.*",
+    "tooltipster": "~3.2.*",
+    "backbone": "~1.1.*",
+	"underscore": "~1.7.*",
+    "jquery-ui": "~1.11.*",
+	"jquery.fileDownload": "~1.4.*",
+	"tooltipster": "~3.3.*",
+	"jquery.scrollTo": "~1.4.*",
+	"bootstrap-css": "~3.2.*",
+	"jquery-timepicker-addon": "~1.4.*"
+  }
+}

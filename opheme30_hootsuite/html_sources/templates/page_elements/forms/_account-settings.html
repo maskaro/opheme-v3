@@ -1,0 +1,65 @@
+<form id="account-settings-form">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="first-name">First Name</label>
+							<input type="text" class="form-control" data-parsley-required name="first-name" placeholder="first name" value="<%= data.user.first_name %>">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="last-name">Last Name</label>
+							<input type="text" class="form-control" data-parsley-required name="last-name" placeholder="last name" value="<%= data.user.last_name %>">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="email">Email Address</label>
+							<div id="email-address-field" title="<%= data.user.email %>"><%= data.user.email %></div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<button id="passwordToggle" type="button" class="btn btn-info" data-toggle="collapse" data-target="#password-container">Change Password</button>
+					</div>
+				</div>
+				<br />
+				<div id="password-container" class="collapse">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="old-password">Current Password (required to change Password)</label>
+								<input type="password" class="form-control" name="old-password" id="password-old" value="">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="new-password">New Password</label>
+								<input type="password" class="form-control" name="new-password" id="password-new" value="">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="confirm-password">Confirm New Password</label>
+								<input class="form-control" type="password" name="confirm-password" id="password-confirm" value="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="submit" class="btn btn-block btn-success" value="Save Changes" >
+			</div>
+		</div>
+	</div>
+</form>

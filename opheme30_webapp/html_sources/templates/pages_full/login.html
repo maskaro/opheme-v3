@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="panel-group" id="login-register">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title" data-toggle="collapse" data-parent="#login-register" href="#login-panel">
+                    Login
+                </div>
+            </div>
+            <div id="login-panel" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <%= renderLogin() %>
+                </div>
+                <div id="forgot-header" class="panel-footer">
+                    Forgot Password
+                </div>
+                <div class="panel-body" style="display:none">
+					<%= renderForgot() %>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title" data-toggle="collapse" data-parent="#login-register" href="#register-panel">
+                    Register
+                </div>
+            </div>
+            <div id="register-panel" class="panel-collapse collapse">
+                <div class="panel-body">
+					<%= renderRegister() %>
+                </div>
+            </div>
+        </div>
+    </div>
+	<%= renderTerms() %>
+</div>

@@ -1,0 +1,17 @@
+#back-tc {
+	cursor: pointer;
+}
+
+#back-tc:hover {
+	background-color: #F5F5F5;
+}
+
+@media (max-width: 479px) {
+	#large-logo { margin: 20px auto; max-width: 100%; }
+	#terms-content h1 { font-size: 22px; }
+	#terms-content h2 { font-size: 20px; }
+	#terms-content ul { padding-left: 15px; text-align: left; }
+	#terms-content ol { padding-left: 20px; text-align: left; }
+	#back-tc { position: fixed; bottom: -20px; left: 0px; width: 100%; }
+	#back-tc .panel-body { padding: 0px 10px 5px 10px; }
+}

@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-md-12">
+		<div id="sma-container">
+			<!--@foreach ($socialMediaPlatformCollection as $socialMediaPlatform)-->
+				<h4> Twitter Accounts</h4>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12">
+								<form class="sma-add-form" data-sma="twitter">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-btn">
+												<button style="" type="button" class="btn btn-primary">
+													<i class="fa fa-twitter fa-lg"></i> Authorise with <strong>Twitter</strong>
+												</button>
+											</span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<!--@forelse ($userAuthKeys[$socialMediaPlatform] as $token)-->
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<div class="panel-title">
+												Account Name: @<strong>rdinita</strong>
+											</div>
+										</div>
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-md-8">
+													<label>Date Authorised:</label> 30-02-2015
+												</div>
+												<div class="col-md-4">
+													<form class="sma-remove-form" data-sma="twitter">
+														<input type="hidden" name="authkey_id" value="1">
+														<input class="btn btn-xs btn-danger pull-right" type="submit" value="Remove">
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								<!--@empty
+									<div class="alert alert-warning">You have not authorised any Twitter accounts with oPheme yet.</div>
+								@endforelse-->
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--@endforeach-->
+		</div>
+	</div>
+</div>

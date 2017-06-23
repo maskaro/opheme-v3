@@ -1,0 +1,23 @@
+<form id="register-form">
+	<div class="form-group">
+		<input id="email" type="email" class="form-control" name="email" placeholder="email" data-parsley-required data-parsley-type="email" data-parsley-trigger="keyup">
+	</div>
+	<div class="form-group">
+		<input id="confirmEmail" type="email" class="form-control" name="email_confirm" placeholder="confirm email" data-toggle="popover" data-placement="top" data-content="thou. shalt. not. PASTE!" data-trigger="manual" data-parsley-required data-parsley-type="email" data-parsley-equalto="#email" data-parsley-trigger="keyup">
+	</div>
+	<div class="form-group">
+		<input type="text" class="form-control" name="first_name" placeholder="first name (only, not last name)" data-parsley-required data-parsley-trigger="keyup">
+	</div>
+	<div class="form-group">
+		<input id="password" type="password" class="form-control" name="password" placeholder="password" value="" data-parsley-required data-parsley-minlength="8" data-parsley-trigger="keyup">
+	</div>
+	<div class="form-group">
+		<input id="confirmPassword" type="password" class="form-control" name="password_confirm" placeholder="confirm password" value="" data-parsley-required data-parsley-equalTo="#password" data-parsley-trigger="keyup">
+	</div>
+	<div id="terms-wrapper" class="form-group">
+		<label class="checkbox-inline">
+			<input id="terms" name="terms" type="checkbox" data-parsley-required data-parsley-trigger="change"> I have read and agreed to <a id="terms-button" type="button" data-bypass>Terms &amp; Conditions</a>
+		</label>
+	</div>
+	<input type="submit" class="btn btn-primary btn-block" value="Sign Up">
+</form>

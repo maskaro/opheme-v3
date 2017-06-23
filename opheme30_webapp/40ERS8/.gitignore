@@ -1,0 +1,6 @@
+!.gitignore
+.vagrant
+puphpet/config.yaml
+puphpet/files/dot/ssh/id_rsa
+puphpet/files/dot/ssh/id_rsa.ppk
+puphpet/files/dot/ssh/id_rsa.pub

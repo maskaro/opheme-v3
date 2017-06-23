@@ -1,0 +1,3 @@
+<?php
+	
+	$moduleData['emailFrequencyArray'] = $availableEmailNotificationFrequency;

@@ -1,0 +1,72 @@
+<form id="account-update-form">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" required="required" name="first_name" placeholder="first name" value="<%= user.first_name %>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+							<input type="text" class="form-control" required="required" name="last_name" placeholder="last name" value="<%= user.last_name %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email Address</label>
+							<div><%= user.email %></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+							<input type="text" class="form-control" required="required" name="phone" placeholder="phone number" value="<%= user.phone %>">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            <button id="passwordToggle" type="button" class="btn btn-info form-control" data-toggle="collapse" data-target="#password-container">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div id="password-container" class="collapse">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="password_old">Current Password</label>
+                                <input type="password" class="form-control" name="password_old" value="" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password_new">New Password</label>
+                                <input type="password" class="form-control" name="password_new" id="password_new" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password_confirm">Confirm New Password</label>
+                                <input class="form-control" type="password" name="password_confirm" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-block btn-success" value="Save Changes">
+            </div>
+        </div>
+    </div>
+</form>

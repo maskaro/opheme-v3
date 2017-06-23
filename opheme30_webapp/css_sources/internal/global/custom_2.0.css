@@ -1,0 +1,82 @@
+#message-container {
+	
+}
+
+#wizard_running .checkbox-wrapper {
+	display: inline-block;
+	width: 13%;
+	margin-bottom: 4px;
+}
+
+#wizard_running .checkbox-wrapper > input {
+	display: block;
+	margin: 5px auto;
+}
+
+#wizard_running .checkbox-wrapper > label {
+	display: block;
+	text-align: center;
+}
+
+#wizard_running .checkbox-wrapper.everyday {
+	display: block;
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+#wizard_running .everyday > input, #wizard_running .everyday > label {
+	margin: 0 0 5px 15px;
+	text-align: left;
+	display: inline;
+}
+
+.jobWizardInfo {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.more-info-tooltip {
+	z-index: 20000;
+}
+
+/* Campaign/Discover Wizard Editor */
+#wizard-navigation {
+	padding-top: 5px;
+	text-align: center;
+}
+
+#wizard-navigation > ul.start {
+	/*padding-left: 175px; /* a width + 20px */
+}
+
+#wizard-navigation > ul.finish {
+	/*padding-right: 175px; /* a width + 20px */
+}
+
+#wizard-navigation li > a {
+	/*width: 155px;*/
+	padding: 6px 10px;
+}
+
+#wizard-navigation li > a > img {
+	margin-top: 3px;
+}
+
+#wizard-navigation li > a > img.to-right {
+	/*float: right;*/
+}
+
+#wizard-navigation li > a > img.to-left {
+	/*float: left;*/
+}
+
+#wizard-navigation .current-page {
+	/*font-size: 16px;*/
+}
+
+.modal.modal-wide .modal-dialog {
+	width: 90%;
+}
+.modal-wide .modal-body {
+	overflow-y: auto;
+}

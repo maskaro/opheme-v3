@@ -1,0 +1,83 @@
+<!--Top Bar-->
+<div id="navigation-container" class="hs_topBar">
+	<div class="hs_topBarContent">
+		<i class='fa fa-cog fa-spin my-spinner'></i>
+		<!--Right-Side Controls-->
+		<ul class="hs_topBarControls">
+			<% /* <!--<li class="hs_topBarControlsBtnCustom" data-toggle="tooltip" data-placement="bottom" title="New Discover">
+				<a href="/discovers/view-setup" class="link-new-discover">
+					<i class="fa fa-lg fa-plus"></i>
+				</a>
+			</li>--> */ %>
+			<li class="hs_topBarControlsBtnCustom btn-home" data-toggle="tooltip" data-placement="bottom" title="View Discovers">
+				<a href="/discovers/view">
+					<i class="icon-app-dir x-streams"></i>
+				</a>
+			</li>
+			<li class="hs_topBarControlsBtnCustom btn-settings" data-dropdown="Settings" data-toggle="tooltip" data-placement="bottom" title="Settings">
+				<i class="icon-app-dir x-settings"></i>
+			</li>
+			<li class="hs_topBarControlsBtnCustom btn-more" data-dropdown="More" data-toggle="tooltip" data-placement="bottom" title="More">
+				<i class="icon-app-dir x-ellipsis"></i>
+			</li>
+		</ul>
+		<div id="discoverList">
+			<!--List of Discovers-->
+			<select id="discoverSelect">
+				<option value="#"><% if (data.discovers.length) { %>Choose Discover<% } else { %>Create a Discover<% } %></option>
+				<%
+				    var id = null;
+				    if (data.currentDiscover !== null) {
+				        id = data.currentDiscover.id;
+					}
+				%>
+				<% _.each(data.discovers, function(discover) {
+					if (discover instanceof Object && discover.id) { %>
+						<option value="<%= discover.id %>"<% if (discover.id === id) { %> selected="selected"<% } %>><%= discover.name %></option>
+				<%      }
+					}); %>
+			</select>
+			<span id="discoverControls"<% if (id) { %> style="display: inline"<% } %>>
+				<a href="/discovers/view-setup" data-toggle="tooltip" data-placement="bottom" title="Edit">
+					<i class="icon-app-dir x-edit"></i>
+				</a>
+				<a data-bypass class="remove-discover" data-toggle="tooltip" data-placement="bottom" title="Remove">
+					<i class="icon-app-dir x-clear"></i>
+				</a>
+			</span>
+			<span id="discoverNewButton" data-toggle="tooltip" data-placement="bottom" title="New Discover">
+				<a href="/discovers/view-setup" class="link-new-discover">
+					<i class="icon-app-dir x-plus"></i>
+				</a>
+			</span>
+		</div>
+		<!--Menu List-->
+		<ul class="hs_topBarDropdown hs_dropdownSettings" data-dropdown="Settings">
+			<li class="hs_dropdownMenuListItem">
+				<a href="/user-account/view">Account Settings</a>
+			</li>
+			<li class="hs_dropdownMenuListItem">
+				<a href="/social-media/view">Social Media Accounts</a>
+			</li>
+			<% /* <li class="hs_dropdownMenuListItem">
+				<a href="/user-account/view-preferences">Preferences</a>
+			</li> */ %>
+			<li class="hs_dropdownMenuListItem">
+				<a href="/login/exit">Logout</a>
+			</li>
+		</ul>
+		<ul class="hs_topBarDropdown hs_dropdownMore" data-dropdown="More">
+			<li class="hs_dropdownMenuListItem">
+				<a data-bypass id="retakeTour">Take the Tour</a>
+			</li>
+			<li class="hs_dropdownMenuListItem">
+				<a data-bypass href="http://www.opheme.com/#contact-form" target="_blank">Contact Us</a>
+			</li>
+			<li class="hs_dropdownMenuListItem">
+				<a data-bypass href="http://www.opheme.com" target="_blank">Visit our Website</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- Push content below down, floats are disrupting the flow. -->
+<br style="clear: both">

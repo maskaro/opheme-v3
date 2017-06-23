@@ -1,0 +1,33 @@
+<div id="discovers-information" class="col-sm-12 col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<h3>Discovers</h3>
+			</div>
+		</div>
+		<div class="panel-body">
+			<% if (data.discovers.length) { %>
+				<ul id="discoverList" class="list-group">
+					<% _.each(data.discovers, function(discover) { %>
+						<li class="list-group-item" data-id="<%= discover.id %>">
+							<a data-bypass class="discoverName"><%= discover.name %></a>
+							<span class="pull-right">
+								<span class="messageCount"><%= discover.messagesCount %></span>
+								<i class="fa fa-pencil fa-lg" data-toggle="tooltip" data-placement="top" title="Edit"></i>
+								<% if (discover.running) { %>
+									<i class="fa fa-pause fa-lg text-warning" data-toggle="tooltip" data-placement="top" title="Suspend"></i>
+									<i class="fa fa-play fa-lg text-success hidden" data-toggle="tooltip" data-placement="top" title="Resume"></i>
+								<% } else { %>
+									<i class="fa fa-pause fa-lg text-warning hidden" data-toggle="tooltip" data-placement="top" title="Suspend"></i>
+									<i class="fa fa-play fa-lg text-success" data-toggle="tooltip" data-placement="top" title="Resume"></i>
+								<% } %>
+								<i class="fa fa-remove fa-lg" data-toggle="tooltip" data-placement="top" title="Remove"></i>
+							</span>
+						</li>
+					<% }); %>
+				</ul>
+			<% } %>
+			<a href="/discovers/view-setup" class="btn btn-block btn-sm btn-success link-new-discover">Create New Discover</a>
+		</div>
+	</div>
+</div>

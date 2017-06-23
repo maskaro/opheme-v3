@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html manifest="/manifest.appcache">
+
+	<head>
+
+		<title>oPheme - Hootsuite App</title>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" href="/css/external_auto.css">
+		<link type="text/css" rel="stylesheet" href="/css/external_custom.css">
+		<link type="text/css" rel="stylesheet" href="/css/internal.css">
+
+		<script>
+			var opheme_user_key = "<?php /* echo $api_key; */ ?>",
+				hootsuite_user_id = "<?php echo $user_id; ?>",
+				tour_ended = 0<?php /* echo $tour_ended; */ ?>;
+			<?php if ( isset ( $_REQUEST[ 'response' ] ) ) { ?>
+				window.close (); // oauth redirect with response from API
+			<?php /* window["oauth_response"] = '<?php echo $_REQUEST['response']; ?>'; */ ?>
+			<?php } ?>
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="content-app">
+
+			<div id="header"></div>
+
+			<div id="alerts"></div>
+
+			<div id="content">
+				<div id="page-loader">
+					<div class="alert alert-warning">
+						Please wait while we load the page ... <i class="fa fa-cog fa-spin"></i>
+					</div>
+				</div>
+			</div>
+
+			<div id="footer"></div>
+
+		</div>
+
+		<div class="modal fade" id="oModal" tabindex="-1" role="dialog" aria-labelledby="oModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="oModalLabel">Modal Title</h4>
+					</div>
+					<div class="modal-body">
+						Modal Content.
+					</div>
+					<div class="modal-footer">
+						<button id="oModalNo" type="button" class="btn btn-sm btn-default" data-dismiss="modal">No</button>
+						<button id="oModalYes" type="button" class="btn btn-sm btn-primary">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			(
+				function ( i, s, o, g, r, a, m )
+				{
+					i[ 'GoogleAnalyticsObject' ] = r;
+					i[ r ] = i[ r ] || function ()
+						{
+							(
+								i[ r ].q = i[ r ].q || []
+							).push ( arguments )
+						}, i[ r ].l = 1 * new Date ();
+					a = s.createElement ( o ),
+						m = s.getElementsByTagName ( o )[ 0 ];
+					a.async = 1;
+					a.src   = g;
+					m.parentNode.insertBefore ( a, m )
+				}
+			) ( window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga' );
+
+			ga ( 'create', 'UA-38710014-1', 'auto' );
+			ga ( 'send', 'pageview' );
+
+		</script>
+
+		<script src="https://maps.google.com/maps/api/js?libraries=geometry"></script>
+		<script src="https://d2l6uygi1pgnys.cloudfront.net/jsapi/2-0/hsp.js"></script>
+		<script data-main="/js/internal/bootstrap" src="/js/lib/external_requirejs.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,182 @@
+[
+	{
+		"created_at": "Tue Jun 02 15:04:51 +0000 2015",
+		"id": 605751938773331968,
+		"id_str": "605751938773331968",
+		"text": "@lewisf2001uk hello testing interaction, back at ya!",
+		"source": "\u003ca href=\"http:\/\/twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c\/a\u003e",
+		"truncated": false,
+		"in_reply_to_status_id": 605751795940491264,
+		"in_reply_to_status_id_str": "605751795940491264",
+		"in_reply_to_user_id": 423681650,
+		"in_reply_to_user_id_str": "423681650",
+		"in_reply_to_screen_name": "lewisf2001uk",
+		"user": {
+			"id": 347812153,
+			"id_str": "347812153",
+			"name": "Pawe\u0142 Skowronek",
+			"screen_name": "PawelSkowronek",
+			"location": "Cambridge",
+			"description": "CSS3 practitioner. Apple fanatic.",
+			"url": "http:\/\/t.co\/CmUgcIcb6I",
+			"entities": {
+				"url": {
+					"urls": [{
+							"url": "http:\/\/t.co\/CmUgcIcb6I",
+							"expanded_url": "http:\/\/about.me\/pawel.skowronek",
+							"display_url": "about.me\/pawel.skowronek",
+							"indices": [0, 22]
+						}]
+				},
+				"description": {
+					"urls": []
+				}
+			},
+			"protected": false,
+			"followers_count": 65,
+			"friends_count": 164,
+			"listed_count": 3,
+			"created_at": "Wed Aug 03 11:58:29 +0000 2011",
+			"favourites_count": 22,
+			"utc_offset": 3600,
+			"time_zone": "London",
+			"geo_enabled": true,
+			"verified": false,
+			"statuses_count": 844,
+			"lang": "en",
+			"contributors_enabled": false,
+			"is_translator": false,
+			"is_translation_enabled": false,
+			"profile_background_color": "FFFFFF",
+			"profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif",
+			"profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme14\/bg.gif",
+			"profile_background_tile": true,
+			"profile_image_url": "http:\/\/pbs.twimg.com\/profile_images\/378800000116407773\/394d3c7524e6cd2881f9477212f69e09_normal.jpeg",
+			"profile_image_url_https": "https:\/\/pbs.twimg.com\/profile_images\/378800000116407773\/394d3c7524e6cd2881f9477212f69e09_normal.jpeg",
+			"profile_link_color": "C6A24E",
+			"profile_sidebar_border_color": "FFFFFF",
+			"profile_sidebar_fill_color": "FFFFFF",
+			"profile_text_color": "333333",
+			"profile_use_background_image": false,
+			"default_profile": false,
+			"default_profile_image": false,
+			"following": true,
+			"follow_request_sent": false,
+			"notifications": false
+		},
+		"geo": null,
+		"coordinates": null,
+		"place": null,
+		"contributors": null,
+		"is_quote_status": false,
+		"retweet_count": 0,
+		"favorite_count": 0,
+		"entities": {
+			"hashtags": [],
+			"symbols": [],
+			"user_mentions": [{
+					"screen_name": "lewisf2001uk",
+					"name": "Lewis Freeman",
+					"id": 423681650,
+					"id_str": "423681650",
+					"indices": [0, 13]
+				}],
+			"urls": []
+		},
+		"favorited": false,
+		"retweeted": false,
+		"lang": "en",
+		"opheme_backend" : {
+			"social_media_platform" : "twitter",
+			"created_timestamp" : "2015-06-02 15:04:51",
+			"sentiment" : "positive",
+			"klout_score" : ""
+		}
+	},
+	{
+		"created_at": "Tue Jun 02 15:05:15 +0000 2015",
+		"id": 605752041697329153,
+		"id_str": "605752041697329153",
+		"text": "@PawelSkowronek Thank you!",
+		"source": "\u003ca href=\"http:\/\/twitter.com\" rel=\"nofollow\"\u003eTwitter Web Client\u003c\/a\u003e",
+		"truncated": false,
+		"in_reply_to_status_id": 605751938773331968,
+		"in_reply_to_status_id_str": "605751938773331968",
+		"in_reply_to_user_id": 347812153,
+		"in_reply_to_user_id_str": "347812153",
+		"in_reply_to_screen_name": "PawelSkowronek",
+		"user": {
+			"id": 423681650,
+			"id_str": "423681650",
+			"name": "Lewis Freeman",
+			"screen_name": "lewisf2001uk",
+			"location": "",
+			"description": "",
+			"url": null,
+			"entities": {
+				"description": {
+					"urls": []
+				}
+			},
+			"protected": false,
+			"followers_count": 4,
+			"friends_count": 14,
+			"listed_count": 0,
+			"created_at": "Mon Nov 28 20:17:07 +0000 2011",
+			"favourites_count": 0,
+			"utc_offset": null,
+			"time_zone": null,
+			"geo_enabled": true,
+			"verified": false,
+			"statuses_count": 15,
+			"lang": "en",
+			"contributors_enabled": false,
+			"is_translator": false,
+			"is_translation_enabled": false,
+			"profile_background_color": "C0DEED",
+			"profile_background_image_url": "http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+			"profile_background_image_url_https": "https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png",
+			"profile_background_tile": false,
+			"profile_image_url": "http:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_0_normal.png",
+			"profile_image_url_https": "https:\/\/abs.twimg.com\/sticky\/default_profile_images\/default_profile_0_normal.png",
+			"profile_link_color": "0084B4",
+			"profile_sidebar_border_color": "C0DEED",
+			"profile_sidebar_fill_color": "DDEEF6",
+			"profile_text_color": "333333",
+			"profile_use_background_image": true,
+			"default_profile": true,
+			"default_profile_image": true,
+			"following": false,
+			"follow_request_sent": false,
+			"notifications": false
+		},
+		"geo": null,
+		"coordinates": null,
+		"place": null,
+		"contributors": null,
+		"is_quote_status": false,
+		"retweet_count": 0,
+		"favorite_count": 0,
+		"entities": {
+			"hashtags": [],
+			"symbols": [],
+			"user_mentions": [{
+					"screen_name": "PawelSkowronek",
+					"name": "Pawe\u0142 Skowronek",
+					"id": 347812153,
+					"id_str": "347812153",
+					"indices": [0, 15]
+				}],
+			"urls": []
+		},
+		"favorited": false,
+		"retweeted": false,
+		"lang": "en",
+		"opheme_backend" : {
+			"social_media_platform" : "twitter",
+			"created_timestamp" : "2015-06-02 15:05:15",
+			"sentiment" : "positive",
+			"klout_score" : ""
+		}
+	}
+]

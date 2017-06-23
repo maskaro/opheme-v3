@@ -1,0 +1,41 @@
+<div id="current-jobs" class="col-md-6 col-sm-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<h3>You currently have running:</h3>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<a href="/#/discovers/view">
+					<div id="discover-counter" class="counter-container col-md-12 col-xs-12">
+						<h1>$jobsCount</h1>
+						<h4>Tasks</h4>
+					</div>
+				</a>
+				<!--<a href="/campaign">
+					<div id="campaign-counter" class="counter-container col-md-6 col-xs-6">
+						<h1>$Data.user.jobs.campaignCount</h1>
+						<h4>Campaigns</h4>
+					</div>
+				</a>-->
+			</div>
+			<br>
+			<div class="row">
+				<div class="counter-container col-md-12">
+					<form id="account-preferences" class="form-inline">
+						<div class="form-group">
+							<label for="email_frequency">Send me Task updates once every</label>
+							<select name="email_frequency" class="form-control">
+								<option value="1">Day</option>
+								<option value="2">2 Days</option>
+								<option value="3">3 Days</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-success">Update Preference</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

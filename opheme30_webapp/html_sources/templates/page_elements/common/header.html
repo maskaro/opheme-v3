@@ -1,0 +1,78 @@
+<% if ( logged_in ) { %>
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- Be sure to leave the brand out there if you want it shown -->
+			<a class="navbar-brand" href="/dashboard">
+				<img class="img-responsive" src="/images/small-logo_blue.png" />
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<!-- use class="active" on li for current website, exception is dashboard as you click on opheme's logo to get there -->
+				<% if (user.is_valid) { %>
+					<li>
+						<a id="wizard-menu-discovers" href="/discover"><i class="fa fa-search fa-lg"></i> Discovers</a>
+					</li>
+					<!--<li>
+					<a id="wizard-menu-campaigns" href="/campaign"><i class="fa fa-bar-chart-o fa-lg"></i> Campaigns</a>
+					</li>-->
+					<li>
+						<a id="wizard-menu-smInteraction" href="/interactions"><i class="fa fa-users fa-lg"></i> Social Media Interaction</a>
+					</li>
+				<% } %>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="wizard-menu-settings" class="dropdown">
+					<a href="" data-bypass class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="greeting">Hi, <%= user.first_name %>!</span> <i class="fa fa-cog fa-lg"></i><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<% if (user.is_valid) { %>
+							<li>
+								<a href="/dashboard"><i class="fa fa-dashboard fa-lg"></i> Dashboard</a>
+							</li>
+						<% } %>
+						<li>
+							<a href="/my/account"><i class="fa fa-user fa-lg"></i> Account</a>
+						</li>
+						<% if (user.is_admin) { %>
+							<li>
+								<a href="/admin"><i class="fa fa-cogs fa-lg"></i> Admin</a>
+							</li>
+						<% } %>
+						<% if (Backbone.history.fragment.indexOf("dashboard") || Backbone.history.fragment.indexOf("my/account")) { %>
+							<li class="divider"></li>
+							<li>
+								<a href="" data-bypass onclick="window['tour'].restart();window['tour'].start(true);"><i class="fa fa-road fa-lg"></i> Tour Guide</a>
+							</li>
+						<% } %>
+						<li class="divider"></li>
+						<li>
+							<a href="mailto:support@opheme.com?subject=I%20need%20help%20with%20oPheme!">
+								<i class="fa fa-question-circle fa-lg"></i> Support
+							</a>
+						</li>
+						<li>
+							<a href="/logout"><i class="fa fa-sign-out fa-lg"></i> Log out</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<% } else { %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<img id="large-logo" class="img-responsive" src="/images/oPheme-logo.png" alt="Logo">
+		</div>
+	</div>
+</div>
+<% } %>

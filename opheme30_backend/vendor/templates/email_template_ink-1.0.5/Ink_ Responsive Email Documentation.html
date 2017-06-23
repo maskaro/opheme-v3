@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html style="" class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" href="http://zurb.com/ink/images/icons/favicon.ico" type="image/x-icon">
+<title>Ink: Responsive Email Documentation</title>
+<link rel="stylesheet" href="Ink_%20Responsive%20Email%20Documentation_files/app.css">
+<script src="Ink_%20Responsive%20Email%20Documentation_files/analytics.js" async=""></script><script src="Ink_%20Responsive%20Email%20Documentation_files/custom.js"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2195009-47', 'zurb.com');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body class="off-canvas hide-extras">
+<section role="main">
+<nav class="top-bar hide-for-small">
+<ul class="title-area">
+ 
+<li class="name">
+<h1><a href="http://zurb.com/ink" class="home" title="Ink">Ink</a></h1>
+</li>
+<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+</ul>
+
+<section class="top-bar-section">
+<ul class="right">
+<li><a href="http://zurb.com/ink/process.php">Process</a></li>
+<li class="active"><a href="http://zurb.com/ink/docs.php">Docs</a></li>
+<li><a href="http://zurb.com/ink/inliner.php">Inliner</a></li>
+<li><a href="http://zurb.com/ink/templates.php">Email Templates</a></li>
+<li class="has-form"><a href="http://zurb.com/ink/download.php" class="tiny button">Download</a></li>
+</ul>
+</section></nav>
+<section class="top-area">
+<div class="row">
+<div class="large-12 columns">
+<a class="sidebar-button show-for-small" id="sidebarButton" href="#sidebar"><img alt="Menu-wht" src="Ink_%20Responsive%20Email%20Documentation_files/menu-wht.png"><h4>Ink</h4></a>
+<h2 class="hide-for-small">Documentation</h2>
+</div>
+</div>
+</section>
+<style type="text/css">#if-basicGrid{height:200px;}#if-evenColumns{height:260px;}#if-centerClass{height:220px;}#if-offsetColumns{height:165px;}#if-textPad{height:440px;}#if-fullWidth{height:280px;}#if-subGrid{height:140px;}#if-blockGrid{height:540px;}#if-visibilityClasses{height:110px;}#if-panels{height:110px;}#if-panelSubGrid{height:110px;}#if-panelSidebar{height:420px;}#if-buttons{height:325px;}#if-images{height:250px;}@media only screen and (max-width: 632px), only screen and (min-width: 768px) and (max-width: 843px) {#if-basicGrid{height:225px;}#if-evenColumns{height:570px;}#if-centerClass{height:270px;}#if-offsetColumns{height:165px;}#if-textPad{height:480px;}#if-fullWidth{height:320px;}#if-subGrid{height:210px;}#if-blockGrid{height:1000px;}#if-visibilityClasses{height:110px;}#if-panels{height:110px;}#if-panelSubGrid{height:110px;}#if-panelSidebar{height:400px;}#if-buttons{height:650px;}#if-images{height:800px;}}</style>
+<div class="row docs">
+<div class="large-3 columns">
+<div class="doc-nav">
+<ul class="sub-nav hide-for-small">
+<li><a href="#start">Getting Started</a></li>
+<li><a href="#grid">Grid</a></li>
+<li><a href="#sub-grid">Sub-Grid</a></li>
+<li><a href="#block-grid">Block-Grid</a></li>
+<li><a href="#visibility-classes">Visibility Classes</a></li>
+<li><a href="#panels">Panels</a></li>
+<li><a href="#buttons">Buttons</a></li>
+<li><a href="#images">Retina Images</a></li>
+<li><a href="#compatibility">Supported Clients</a></li>
+<li><a href="#changes">Changelog</a></li>
+<li><hr style="width:75%;"></li>
+<li><a href="#training">Training</a></li>
+</ul>
+</div>
+</div>
+<div class="large-9 columns">
+<h1 id="start" data-magellan-destination="start" class="light">Getting Started</h1>
+<p class="lead">Dive into creating your responsive email.</p>
+<hr>
+<h2 class="light">The Boilerplate</h2>
+<p>
+Starting a new Ink project is fairly straightforward. If you aren’t using one of our <a href="http://zurb.com/ink/templates.php">templates</a>, grab the boilerplate code from below to use as a starting point. While you can reference <code>ink.css</code> using a <kbd>&lt;link&gt;</kbd> tag for testing purposes, be sure to remove the <kbd>&lt;link rel="stylesheet" href="ink.css" /&gt;</kbd> statement and paste your CSS into the <kbd>&lt;style&gt;</kbd> tag in the head before running your email through an inliner.
+</p>
+<h6>Boilerplate.html</h6>
+<code class="geshi"><span style="color: #cd2828;">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span><br>
+<span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #6ab825;">html</span></a> xmlns<span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"http://www.w3.org/1999/xhtml"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/head.html"><span style="color: #6ab825;">head</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #6ab825;">meta</span></a> <span style="color: #bbbbbb;">http-equiv</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"Content-Type"</span> <span style="color: #bbbbbb;">content</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"text/html; charset=utf-8"</span> <span style="color: #6ab825;">/</span>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/meta.html"><span style="color: #6ab825;">meta</span></a> <span style="color: #bbbbbb;">name</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"viewport"</span> <span style="color: #bbbbbb;">content</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"width=device-width"</span><span style="color: #6ab825;">/</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/link.html"><span style="color: #6ab825;">link</span></a> <span style="color: #bbbbbb;">rel</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"stylesheet"</span> <span style="color: #bbbbbb;">href</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"ink.css"</span>&gt;</span> <span style="color: #999999;">&lt;!-- For testing only --&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/style.html"><span style="color: #6ab825;">style</span></a> <span style="color: #bbbbbb;">type</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"text/css"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; <span style="color: #999999;">/* Ink styles go here in production */</span><br>
+&nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/style.html"><span style="color: #6ab825;">style</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/style.html"><span style="color: #6ab825;">style</span></a> <span style="color: #bbbbbb;">type</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"text/css"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #999999;">/* Your custom styles go here */</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/style.html"><span style="color: #6ab825;">style</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/head.html"><span style="color: #6ab825;">head</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #6ab825;">body</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"body"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center"</span> <span style="color: #bbbbbb;">align</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center"</span> <span style="color: #bbbbbb;">valign</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"top"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;center&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #999999;">&lt;!-- Email Content --&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span>center&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #6ab825;">body</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/html.html"><span style="color: #6ab825;">html</span></a>&gt;</span></code><br>
+<p>
+If you’re applying a background color to your entire email, be sure to attach it to the table with a class of <code>body</code> as well as to the actual <kbd>&lt;body&gt;</kbd> tag, since some clients remove this by default.
+</p>
+<h6>Inline Styles</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/html.html"><span style="color: #6ab825;">html</span></a>&gt;</span><br>
+&nbsp; &nbsp; <br>
+...<br>
+&nbsp; &nbsp; <br>
+<span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/body.html"><span style="color: #6ab825;">body</span></a> <span style="color: #bbbbbb;">style</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"background:#ddd"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"body"</span> <span style="color: #bbbbbb;">style</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"background:#ddd"</span>&gt;</span> <span style="color: #999999;">&lt;!-- Background goes here too --&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; ...<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/body.html"><span style="color: #6ab825;">body</span></a>&gt;</span></code><br>
+<h6>CSS</h6>
+<code class="geshi">body<span style="color: #6ab825;">,</span> <span style="color: #6666ff;">.body</span> <span style="color: #6ab825;">{</span><br>
+&nbsp; <span style="color: #6ab825;">background</span><span style="color: #6ab825;">:</span> <span style="color: #990000;">#ddd</span><span style="color: #6ab825;">;</span><br>
+<span style="color: #6ab825;">}</span></code><br>
+<hr>
+<h2 class="light">Sending Your Email</h2>
+<p>Sending HTML email is a lot different than sending plain text email. 
+While it may be tempting to just open the email in a browser and click 
+“share” or to use the “Insert HTML” function of your favorite email 
+client, this often strips off a lot of the styling and makes your email 
+completely unusable on mobile devices.</p>
+<p>To get the best results, we recommend that you send your HTML email using an <a href="http://en.wikipedia.org/wiki/Email_service_provider_%28marketing%29">Email Service Provider (ESP)</a> such as <a href="http://mailchimp.com/">Mailchimp</a> or <a href="http://campaignmonitor.com/">Campaign Monitor</a>.
+ If you’re just running a quick test and don't want to sign up for an 
+ESP, sending from the command line using a scripting language like <a href="http://php.net/manual/en/function.mail.php">PHP</a> or <a href="http://ruby-doc.org/stdlib-2.0/libdoc/net/smtp/rdoc/Net/SMTP.html">Ruby</a> usually works fine.</p>
+<hr>
+<h2 class="light">Testing and Troubleshooting</h2>
+<p>Since targeting a <a href="#compatibility">diverse range of email clients</a>
+ requires some specific and rather quirky markup, Ink doesn’t always 
+preview properly in the browser. When doing browser tests, we recommend 
+using the latest version of <a href="http://google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/">Safari</a> or <a href="http://www.opera.com/">Opera</a>, since Ink doesn’t always display properly in Firefox or Internet Explorer.</p>
+<p>Testing in the browser isn't enough, however, and you should always 
+test in actual email clients. If you don't have access to the actual 
+clients you want to test, a testing service like <a href="https://litmus.com/">Litmus</a> or <a href="http://www.emailonacid.com/">Email on Acid</a> can help.</p>
+<p>If you're having trouble with an email, the first thing to check is the markup. Often times a simple error like a forgotten <kbd>&lt;tr&gt;</kbd>
+ or a nested tag that’s been closed in the wrong order can wreak havoc 
+on your design. If that’s not the problem, it could be an issue with 
+your ESP. <strong>Some senders prepend an <kbd>&lt;html&gt;</kbd> tag to your message, which causes the DOCTYPE tag to not be interpreted by the email recipient.</strong>
+ To see if this is what’s happening, try sending a test email to 
+yourself and using the “show original” or “raw source” option in your 
+mail client to manually inspect the code.</p>
+<hr class="section">
+<h1 id="grid" data-magellan-destination="grid" class="light">Grid</h1>
+<p class="lead">Create powerful multi-device layouts quickly and easily.</p>
+<hr>
+<h2 class="light">Structure</h2>
+<p>Ink uses a 12-column grid with a 580px wrapper. On mobile devices 
+(under 580px wide), columns become full width and stack vertically.</p>
+<p>Ink's grid can be thought of in terms of three components:</p>
+<h4 class="normal">Containers</h4>
+<p>Ink containers wrap the content and maintain a fixed, 580px layout on
+ large displays. Below 580px, containers take up 95% of the screen's 
+width, ensuring that your content doesn't run right up against the edges
+ of the user's screen.</p>
+<h4 class="normal">Rows</h4>
+<p>Rows are used to separate blocks of content vertically. In addition to the vertical separation, the <kbd>&lt;td&gt;</kbd> tags of <code>.row</code> tables use the wrapper class to maintain a gutter between columns. Note: the last <code>.wrapper</code> <kbd>&lt;td&gt;</kbd> in a row MUST have a class of <code>.last</code> applied to it, even if it's the only wrapper in the row (ex. for a row with a single, twelve-column wide content area).</p>
+<h4 class="normal">Columns</h4>
+<p>Columns denote the width of the content, as based on a 12-column 
+system. The content inside them will expand to cover n-columns, assuming
+ that the number of columns in one row adds up to 12.</p>
+<h6>The Three Grid Components</h6>
+<p>Basic example of the three main grid components.</p>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"container"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"eight columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Eight Columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Four Columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Visual Explanation of Grid</h6>
+<p>Diagram of how the basic grid is laid out. While Ink was used to 
+create the example (and therefore it responds to the correct media 
+queries), extra coloring and spacing was added for clarity.</p>
+<iframe id="if-basicGrid" src="Ink_%20Responsive%20Email%20Documentation_files/basic-grid.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Breakdown</h2>
+<p>The main elements in the grid and how they're used:</p>
+<table>
+<thead>
+<tr>
+<td>Element Type</td>
+<td>Class Name</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody><tr>
+<td>table</td>
+<td>container</td>
+<td>Constrains the content to a 580px wrapper on large screens (95% on small screens) and centers it within the body.</td>
+</tr>
+<tr>
+<td>table</td>
+<td>row</td>
+<td>Separates each row of content.</td>
+</tr>
+<tr>
+<td>td</td>
+<td>wrapper</td>
+<td>Wraps each <code>.columns</code> table, in order to create a gutter between columns and force them to expand to full width on small screens.</td>
+</tr>
+<tr>
+<td>td</td>
+<td>last</td>
+<td>Class applied to the last <code>.wrapper</code> td in each row in order for the gutter to work properly. If you only have one (presumably full-width) <code>.columns</code> table (and therefore one <code>.wrapper</code> td) in a row, the <code>.wrapper</code> td still needs to have the last class applied to it.</td>
+</tr>
+<tr>
+<td>table</td>
+<td>{number}</td>
+<td>Can be any number between one and twelve (spelled out). Used to determine how wide your <code>.columns</code> tables are. The number of columns in each row should add up to 12, including  offset columns .</td>
+</tr>
+<tr>
+<td>table</td>
+<td>columns</td>
+<td>Table that displays as n-twelfths of the width of the 580px <code>.container</code> table on large screens, and expands to the full width of the <code>.container</code> table on small screens.</td>
+</tr>
+<tr>
+<td>td</td>
+<td>expander</td>
+<td>An empty (and invisible) element added after the content element in a <code>.columns</code> table. It forces the content <code>td</code> to expand to the full width of the screen on small devices, instead of just the width of the content within the <code>td</code>.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 class="light">Examples</h2>
+<h4 class="normal">Even Columns</h4>
+<p>Ink's 12-column grid makes creating even column layouts a snap. Just use one <code>.twelve.columns</code>, two <code>.six.columns</code>, three <code>.four.columns</code> or four <code>.three.columns</code>
+ classes to create your layout. Appearing as multiple, even columns on 
+large screens, the layout will fold into a single column on small 
+(mobile) screens.</p>
+<h6>Code for Even Columns</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"container"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; twelve.columns<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .six.columns<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .six.columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; ...<br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Even 1, 2, 3 and 4 Column Layouts</h6>
+<iframe id="if-evenColumns" src="Ink_%20Responsive%20Email%20Documentation_files/even-columns.html"></iframe>
+<br>
+<br>
+ 
+ 
+<h4 class="normal">Centered Content</h4>
+<p>To center the content of a column, apply a class of <code>center</code> to the <kbd>&lt;td&gt;</kbd> that contains the content. If you want to center an image, you should also apply a class of <code>center</code> to the image itself. For maximum client support, we also recommend using the HTML <kbd>&lt;center&gt;</kbd> tag around the content you wish to center.</p>
+<h6>The Center Class</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center panel"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;center&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Centered content <br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span>center&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center panel"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;center&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #999999;">&lt;!-- Centered image --&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/img.html"><span style="color: #6ab825;">img</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center"</span> <span style="color: #bbbbbb;">src</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"http://placehold.it/125x125&amp;text=Centered%20Image"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span>center&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Centered Text and Images</h6>
+<iframe id="if-centerClass" src="Ink_%20Responsive%20Email%20Documentation_files/center-class.html"></iframe>
+<br>
+<br>
+<h4 class="normal">Offset Columns</h4>
+<p>In lieu of using empty columns to offset content, one can use the <code>.offset-by-{number of columns}</code> helper class (ex,<code>.offset-by-two</code>, <code>.offset-by-three</code>,
+ etc). By applying the class to the wrapper surrounding a column 
+section, the content will be pushed to the left by the specified number 
+of columns. Remember to count any column offsets towards the total 
+number of columns in a row when making sure that they add up to 12.</p>
+<h6>Offset Columns Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper offset-by-four"</span>&gt;</span><br>
+&nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"eight columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Offset Content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Offset Example</h6>
+<iframe id="if-offsetColumns" src="Ink_%20Responsive%20Email%20Documentation_files/offset-columns.html"></iframe>
+<br>
+<br>
+<h4 class="normal">Text Padding</h4>
+<p>A fairly common use case for the container is to give your text a 
+white background to separate it from a colored email body. To assist 
+with this design pattern, we've included three helper classes with Ink: <code>.text-pad</code>, <code>.left-text-pad</code> and <code>.right-text-pad</code>.</p>
+<p>The <code>.text-pad</code> class provides 10px of padding on either side of the content (while it's named <strong>text</strong>-pad, it works just as well on buttons or images), making sure it doesn't butt right up against the edge of your container. The <code>.text-pad</code> class should be applied to the <kbd>&lt;td&gt;</kbd> of a <code>.columns</code> <kbd>&lt;table&gt;</kbd>.</p>
+<p>The <code>.left-text-pad</code> and <code>.right-text-pad</code> do the same thing as the <code>.text-pad</code>
+ class, but are meant to be applied to content that doesn't extend 
+across the entire row (in other words, content that isn't twelve columns
+ wide). The directional text-padding classes only apply the padding to 
+the side of the content near the edge of the container on large screens,
+ but apply it to both sides on small screens, when the columns expand to
+ fill the full width of the row.</p>
+<h6>The Text-Pad Class</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"left-text-pad"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Text<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Text<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"right-text-pad"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Text<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Container Backgrounds</h6>
+<p>Visual example of the body and the container having different colored backgrounds, the main use case for <code>.text-pad</code>.</p>
+<iframe id="if-textPad" src="Ink_%20Responsive%20Email%20Documentation_files/text-pad.html"></iframe>
+<br>
+<br>
+<h4 class="normal">Full-Width Rows</h4>
+<p>When working with designs that call for a container that's colored to
+ stand out from the background (like the example above), it can often be
+ helpful to have full-width rows that can be styled separately, 
+especially for elements like headers or ad breaks. Since the rows of the
+ Ink grid are usually restrained to the width of the container, this 
+design pattern requires a slightly different syntax than normal.</p>
+<p>To create a full-width row, just follow this process:</p>
+<ol>
+<li>Create a standard “container &gt; row &gt; column” block.</li>
+<li>Swap the <code>.row</code> and <code>.container</code> classes, keeping the tables in the same place.</li>
+<li>Add center code to the outside (<code>.row</code>) table.</li>
+</ol>
+<p>The row should now extend to the edge of the viewport, while the 
+content is still restricted to the width of the container, so both can 
+be styled accordingly.</p>
+<h6>Reverse Row Syntax</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span> <span style="color: #999999;">&lt;!-- Styles go on the row --&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center"</span> <span style="color: #bbbbbb;">align</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"center"</span>&gt;</span> <span style="color: #999999;">&lt;!-- Center the container --&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;center&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"container"</span>&gt;</span> <span style="color: #999999;">&lt;!-- Container restricts the content width --&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span> <span style="color: #999999;">&lt;!-- Wrapper stays on the inner table --&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span>center&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Full Width Row</h6>
+<p>In the example below, the rows have a white background, while the body is light blue.</p>
+<iframe id="if-fullWidth" src="Ink_%20Responsive%20Email%20Documentation_files/full-width.html"></iframe>
+<br>
+<br>
+<h4 class="normal">Expanders</h4>
+<p>When the Ink grid is shown on a small screen, the <code>.columns</code>
+ tables expand to the full width of the container and stack vertically. 
+On some clients, however, the columns don't expand properly if the 
+content isn't as wide as the screen. While this might not seem so bad, 
+it can cause your layout to appear broken if you are using a background 
+color on the <code>.columns</code> table or are centering the content.</p>
+<p>To get around this, an empty <kbd>&lt;td&gt;</kbd> with a class of <code>expander</code> is used after the <kbd>&lt;td&gt;</kbd> containing the actual content in the <code>.columns</code> table. This extra <kbd>&lt;td&gt;</kbd> isn't displayed, but it forces the content <kbd>&lt;td&gt;</kbd> to expand to full width.</p>
+<h6>Expander TDs</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"columns"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #999999;">&lt;!-- Content not large enough to "prop" the container open all the way --&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span> <span style="color: #999999;">&lt;!-- Used to fix columns on small screens --&gt;</span><br>
+<br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>The grid works as expected in most major email clients, with some caveats in <strong>Gmail (Mobile, iOS, Android)</strong>.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="x">✘</span></td>
+<td>Since Gmail doesn't support media queries, users will be presented 
+with the desktop view. If mobile Gmail is a large part of your audience,
+ we'd suggest using a layout based on the <a href="#block-grid">block-grid</a>.</td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td>Be sure to use <kbd>&lt;center&gt;</kbd> tags in addition to the <code>center</code> class in order to center content properly.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="sub-grid" data-magellan-destination="sub-grid" class="light">Sub-Grid</h1>
+<p class="lead">A non-stacking grid for even more versatile layouts.</p>
+<hr>
+<h4 class="normal">Grids Within Grids</h4>
+<p>While the Ink grid can't be nested like its <a href="http://foundation.zurb.com/docs/components/grid.html">Foundation counterpart</a>, Ink does provide a nestable sub-grid for when one grid just isn't enough. By applying a <code>.sub-columns</code> class (as well as a numbered class, same as the primary grid) to a <kbd>&lt;td&gt;</kbd> tag underneath a <code>.columns</code> table, you can sub-divide the <code>.columns</code> table into sub-columns.</p>
+<p>The last <code>.sub-columns</code> <kbd>&lt;td&gt;</kbd> in the <code>.columns</code> <kbd>&lt;table&gt;</kbd> should be given a class of <code>last</code> in order for the gutter padding to be properly maintained.</p>
+<h6>Basic Sub-Grid Example</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"eight columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"eight sub-columns"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .eight.sub-columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four sub-columns last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .four.sub-columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .four columns<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Non-Collapsing Sub-Grid Columns</h6>
+<iframe id="if-subGrid" src="Ink_%20Responsive%20Email%20Documentation_files/basic-sub-grid.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>The sub-grid works as expected in most major email clients.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="block-grid" class="light">Block-Grid</h1>
+<p class="lead">An even-width element grid that doesn't use media queries.</p>
+<hr>
+<h2 class="light">Evenly Spaced Blocks</h2>
+<p>For cases where neither the Ink grid nor the Ink sub-grid is 
+appropriate, the block-grid can often be quite useful. Block-grid 
+elements automatically align to the left and are pushed down to the next
+ row individually as the viewport gets smaller...all without using media
+ queries.</p>
+<p>Block-grids consist of a table with class <code>block-grid</code> applied to it, along with a class in the pattern 'number-up' (ex. <code>.two-up</code>, <code>.three-up</code>,
+ etc.) to describe how many even-sized elements should be placed per 
+row. Extra care should be taken to ensure that there aren't any 
+whitespace characters or newlines between the closing <code>&lt;td&gt;</code> of a block-grid element and the opening <code>&lt;td&gt;</code> of the preceding element, since some clients will render the whitespace as a gap between the elements.</p>
+<h6>Basic Block-Grid Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"container"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"block-grid two-up"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Column #1<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span> <span style="color: #999999;">&lt;!-- Make sure the tags are directly next to each other --&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Column #2<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Visual Example of Block-Grids</h6>
+<iframe id="if-blockGrid" src="Ink_%20Responsive%20Email%20Documentation_files/basic-block-grid.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Examples</h2>
+<h4 id="gmail" class="normal">Multi-column Layouts in Gmail</h4>
+<p>A major use case for block-grids, since they don't rely on media 
+queries, is to create multi-column layouts for Gmail. The simplest way 
+to accomplish this is to create a <code>.two-up</code> block-grid and 
+use the block-grid elements as your column structures. As a progressive 
+enhancement, adding a media query that expands the columns to 100% width
+ under 600px would cause the columns to take up the whole screen on 
+mobile clients that support media queries, while not breaking the reflow
+ pattern for those that don't.</p>
+<h6>Gmail Two Column Layout</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"container"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"block-grid two-up"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Main Content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Right Sidebar<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Block-Grid Column Progressive Enhancement (Optional)</h6>
+<code class="geshi"><span style="color: #999999;">@media only screen and (max-width: 600px) {</span><br>
+&nbsp; table<span style="color: #6ab825;">[</span>class<span style="color: #6ab825;">=</span><span style="color: #ff0000;">"container"</span><span style="color: #6ab825;">]</span> <span style="color: #6666ff;">.block-grid</span> td <span style="color: #6ab825;">{</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">width</span><span style="color: #6ab825;">:</span> <span style="color: #ed9d13;">100%</span> !important<span style="color: #6ab825;">;</span><br>
+&nbsp; <span style="color: #6ab825;">}</span><br>
+<span style="color: #6ab825;">}</span></code><br>
+ 
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>The block-grid works as expected in most major email clients.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td>Make sure that there isn't any whitespace between your <kbd>&lt;td&gt;</kbd> elements, otherwise Thunderbird will add a gap between your block-grid elements.</td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="visibility-classes" data-magellan-destination="visibility-classes" class="light">Visibility Classes</h1>
+<p class="lead">Selectively show content for different screen sizes.</p>
+<hr>
+<p>By adding a visibility class to an element, you can show or hide it 
+based on screen size. Visibility classes can be used on any element. Due
+ to Outlook's lack of support for certain CSS properties, the Ink 
+visibiility classes should be used in conjunction with conditional 
+comments to ensure that the content is properly hidden (or shown) in 
+Outlook 2007/2010/2013.</p>
+<p>Note: If you're using a visibility class on an image, be sure to apply it to the parent element, not to the image itself.</p>
+<h6>Using Visibility Classes</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #999999;">&lt;!--[if !mso]&gt;&lt;!-- --&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns show-for-small"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .show-for-small<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #999999;">&lt;!--&lt;![endif]--&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns hide-for-small"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .hide-for-small<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Content Visibility</h6>
+<iframe id="if-visibilityClasses" src="Ink_%20Responsive%20Email%20Documentation_files/visibility-classes.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Breakdown</h2>
+<p>Available visibility classes:</p>
+<table>
+<tbody><tr>
+<td><code>.hide-for-small</code></td>
+</tr>
+<tr>
+<td><code>.show-for-small</code></td>
+</tr>
+</tbody></table>
+<br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>Visibility classes work as expected in most major email clients, but do not currently support <strong>Gmail</strong>.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="x">✘</span></td>
+<td>Not yet implemented. Support will be added soon.</td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="x">✘</span></td>
+<td>Not yet implemented. Support will be added soon.</td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="panels" data-magellan-destination="panels" class="light">Panels</h1>
+<p class="lead">Quickly highlight important content.</p>
+<hr>
+<p>Add a class of <code>panel</code> to a <kbd>&lt;td&gt;</kbd> in a <code>.columns</code>
+ table in order to give it a default border and background color. Great 
+for offsetting important content or for quickly prototyping a layout.</p>
+<h6>Panel Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; Panel content<br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Panel Example</h6>
+<iframe id="if-panels" src="Ink_%20Responsive%20Email%20Documentation_files/panels.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Examples</h2>
+<h4 class="normal">Sidebar Panel</h4>
+<p>A common patten is to have a panel section serve as a sidebar to offset it from the primary content.</p>
+<h6>Sidebar Panel Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"eight columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Main content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"four columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Panel content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Sidebar Panel</h6>
+<iframe id="if-panelSidebar" src="Ink_%20Responsive%20Email%20Documentation_files/panel-sidebar.html"></iframe>
+<br>
+<br>
+<h4 class="normal">Panels With Sub-grids</h4>
+<p>Nesting a sub-grid under a panel is non-intuitive, since the sub-grid columns would normally be applied to the <kbd>&lt;td&gt;</kbd> elements directly under the <code>.columns</code> table. To get around this, give the <kbd>&lt;td&gt;</kbd> a class of <code>.panel</code> and a class of <code>.sub-grid</code>. You can then put a <kbd>&lt;table&gt;</kbd> inside the <kbd>&lt;td&gt;</kbd> and create the sub-columns using the <kbd>&lt;td&gt;</kbd> elements of the inner table, as shown below.</p>
+<h6>Panel Sub-Grid Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"twelve columns"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"panel sub-grid"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six sub-columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Left Sub-Column<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"six sub-columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Right Sub-Column<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Sub-Grid Panel</h6>
+<iframe id="if-panelSubGrid" src="Ink_%20Responsive%20Email%20Documentation_files/panel-sub-grid.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>Panels work as expected in most major email clients.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="buttons" data-magellan-destination="buttons" class="light">Buttons</h1>
+<p class="lead">Dynamic and effective calls to action.</p>
+<hr>
+<h2 class="light">Structure</h2>
+<p>To create buttons that look great in most clients, make a table of class <code>button</code> to wrap your <kbd>&lt;a&gt;</kbd>
+ tag. Buttons expand to the full width of their container by default, so
+ if you don't want them to expand all the way, consider placing them in a
+ <a href="#sub-grid">sub-grid</a> or <a href="#block-grid">block-grid</a> element.</p>
+<h6>A Basic Button</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"button"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/a.html"><span style="color: #6ab825;">a</span></a> <span style="color: #bbbbbb;">href</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"#"</span>&gt;</span>Button Label<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/a.html"><span style="color: #6ab825;">a</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<hr>
+<h2 class="light">Style Classes</h2>
+<p>Several built in styling classes can be applied to the same element as the <code>button</code> class is applied to in order to adjust the button's appearance.</p>
+<h4 class="normal">Size</h4>
+<p>Size classes affect the button's vertical padding. The available size classes are:</p>
+<table>
+<tbody><tr>
+<td><code>.button</code> (same as <code>.small-button</code>)</td>
+</tr>
+<tr>
+<td><code>.tiny-button</code></td>
+</tr>
+<tr>
+<td><code>.small-button</code></td>
+</tr>
+<tr>
+<td><code>.medium-button</code></td>
+</tr>
+<tr>
+<td><code>.large-button</code></td>
+</tr>
+</tbody></table>
+<h4 class="normal">Color</h4>
+<p>Color classes denote the purpose of the button, and are used to change its background color. The available color classes are:</p>
+<table>
+<tbody><tr>
+<td>none (same as <code>.primary</code>)</td>
+</tr>
+<tr>
+<td><code>.primary</code></td>
+</tr>
+<tr>
+<td><code>.secondary</code></td>
+</tr>
+<tr>
+<td><code>.alert</code></td>
+</tr>
+<tr>
+<td><code>.success</code></td>
+</tr>
+</tbody></table>
+<h4 class="normal">Border Radius</h4>
+<p>Radius classes cause the corners of the buttons to be rounded in clients that support the <kbd>border-radius</kbd> property. The available radius classes are:</p>
+<table>
+<tbody><tr>
+<td>none (no border-radius)</td>
+</tr>
+<tr>
+<td><code>.radius</code></td>
+</tr>
+<tr>
+<td><code>.round</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 class="light">Examples</h2>
+<p>Buttons expand to the width of their parent container by default, so 
+it's recommended that you contain them within a sub-grid or a relatively
+ small number of columns on the main grid.</p>
+<h6>Button Demo</h6>
+<p>All the button modifiers demonstrated. The rows of buttons are contained to <code>.four.columns</code> or <code>.six.columns</code> sections of the grid for clarity.</p>
+<iframe id="if-buttons" src="Ink_%20Responsive%20Email%20Documentation_files/buttons.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>The buttons are compatible with most major clients.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="images" class="light">Retina Images</h1>
+<p class="lead">Accent your emails with rich, high resolution images.</p>
+<hr>
+<h2 class="light">Markup</h2>
+<p>The days of having to choose between supporting Outlook or retina devices are over. To use high resolution images, put <code>height</code> and <code>width</code> HTML attributes on the <kbd>&lt;img&gt;</kbd> tag, corresponding to the scaled size of the image in a desktop view (the width of its <code>.columns</code>
+ container). On small screen devices, Ink will cause the image to expand
+ to its full width (or the width or its parent element, whichever is 
+smaller).</p>
+<h6>Image Markup</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"three columns"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/img.html"><span style="color: #6ab825;">img</span></a> <span style="color: #bbbbbb;">height</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"130"</span> <span style="color: #bbbbbb;">width</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"130"</span> <span style="color: #bbbbbb;">src</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"http://placehold.it/600x600&amp;text=Retina"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<hr>
+<h2 class="light">Column Sizes</h2>
+<p>Below is a chart of the sizes images should be to fully fit various 
+sizes of grid columns on a desktop (larger than 600px) view. Height 
+should be determined with respect to width and should also be explicitly
+ declared on the <kbd>&lt;img&gt;</kbd> tag.</p>
+<table>
+<thead>
+<tr><td>Number of Columns</td>
+<td>Internal Width (in px)</td>
+</tr></thead>
+<tbody><tr>
+<td>1</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>80</td>
+</tr>
+<tr>
+<td>3</td>
+<td>130</td>
+</tr>
+<tr>
+<td>4</td>
+<td>180</td>
+</tr>
+<tr>
+<td>5</td>
+<td>230</td>
+</tr>
+<tr>
+<td>6</td>
+<td>280</td>
+</tr>
+<tr>
+<td>7</td>
+<td>330</td>
+</tr>
+<tr>
+<td>8</td>
+<td>380</td>
+</tr>
+<tr>
+<td>9</td>
+<td>430</td>
+</tr>
+<tr>
+<td>10</td>
+<td>480</td>
+</tr>
+<tr>
+<td>11</td>
+<td>530</td>
+</tr>
+<tr>
+<td>12</td>
+<td>580</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 class="light">Examples</h2>
+<h4 class="normal">Newsletter Images</h4>
+<p>A common pattern in email newsletters is to have an image on the left
+ with description text next to it. We use this layout quite frequently 
+on ZURB emails and thought that it looked awkward when the small image 
+begins to float in the center of the screen on mobile devices. To 
+compensate for this, we use a full-width image that's scaled down on the
+ desktop view.</p>
+<h6>Newsletter 3-9 Image</h6>
+<code class="geshi"><span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"row"</span>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"three columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/img.html"><span style="color: #6ab825;">img</span></a> <span style="color: #bbbbbb;">height</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"130"</span> <span style="color: #bbbbbb;">width</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"130"</span> <span style="color: #bbbbbb;">src</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"http://placehold.it/600x600&amp;text=Retina%20Image"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"wrapper last"</span>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"nine columns"</span>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Text Content<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a> <span style="color: #bbbbbb;">class</span><span style="color: #6ab825;">=</span><span style="color: #ed9d13;">"expander"</span>&gt;&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span><br>
+<br>
+&nbsp; &nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/td.html"><span style="color: #6ab825;">td</span></a>&gt;</span><br>
+&nbsp; <span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/tr.html"><span style="color: #6ab825;">tr</span></a>&gt;</span><br>
+<span style="color: #6ab825;">&lt;<span style="color: #6ab825;">/</span><a href="http://december.com/html/4/element/table.html"><span style="color: #6ab825;">table</span></a>&gt;</span></code><br>
+<h6>Retina Newsletter Image Demo</h6>
+<iframe id="if-images" src="Ink_%20Responsive%20Email%20Documentation_files/images.html"></iframe>
+<br>
+<hr>
+<h2 class="light">Compatibility</h2>
+<div class="compatibility-section">
+<div class="row">
+<div class="large-9 columns">
+<p>Retina images work as expected in most major email clients, with some caveats in <strong>Gmail (Mobile, iOS, Android)</strong>.</p>
+</div>
+<div class="large-3 columns">
+<a href="#" class="reveal-table">Toggle Full Table</a>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="x">✘</span></td>
+<td>Since the inline sizing will not be overwritten in mobile Gmail, retina images should not be used with <a href="#gmail">block-grid</a> based layouts (they're fine with the <a href="#grid">standard grid</a>.</td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="section">
+<h1 id="compatibility" class="light">Supported Clients</h1>
+<p class="lead">We test and support all the major email clients … even Outlook.</p>
+<hr>
+<p>We support as many email clients and as much of the market as 
+possible, however, we simply can't test for everything. As a result, 
+we've decided to test the following clients, based on a combination of 
+their <a href="http://emailclientmarketshare.com/">market share</a> and our ability to reliably test them with the devices and software we have access to.</p>
+<p>While we will help out as much as possible with issues regarding other clients (and are more than willing to accept <a href="https://github.com/zurb/ink/blob/master/CONTRIBUTING.md">pull requests</a>
+ that add support for additional clients), we can't devote a lot of time
+ or effort at this point to fixing issues related to email clients not 
+in the following table.</p>
+<h2 class="light">Tested Clients</h2>
+<table>
+<thead>
+<tr>
+<th width="30%">Client</th>
+<th width="10%"><span>Supported</span></th>
+<th width="60%"><span>Notes</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Mail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Mail (iOS)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2000, 2002, 2003)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2007, 2010, 2013)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook (2011)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Thunderbird</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Desktop)</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Gmail (Mobile, iOS, Android)</td>
+<td><span class="check">✔</span></td>
+<td>Does not fully support the Ink <a href="#grid">grid</a>. Responsive layouts should be accomplished using the <a href="#gmail">block-grid</a>.</td>
+</tr>
+<tr>
+<td>Outlook 2011 for Mac</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>AOL Mail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Hotmail</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook.com</td>
+<td><span class="check">✔</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr class="section">
+<h1 id="changes" class="light">Changelog</h1>
+<p class="lead">All the latest and greatest changes to Ink.</p>
+<hr>
+<h2 class="light">1.0 - Public Release</h2>
+<h6 id="v1-0-5">1.0.5</h6>
+<ul>
+<li>Add <code>.sub-grid</code> class to enable the use of sub-grids with panels</li>
+<li>Add paragraph <code>.lede</code> class</li>
+<li>Lower specificity on <code>.panel</code> class to allw its use on <kbd>&lt;div&gt;</kbd>s</li>
+<li>Partially patch docs examples to work in Firefox</li>
+<li>Normalize font rendering in <kbd>&lt;td&gt;</kbd>s for Outlook 2007/2010/2013</li>
+<li>Fix 100% width issue on iPad</li>
+<li>Remove offset-sub-columns</li>
+<li>Remove proprietary <kbd>&lt;unsubscribe&gt;</kbd> tags from templates</li>
+<li>Fix issue with <code>.one.sub-columns</code> sections</li>
+<li>Expand the Getting Started section of the docs</li>
+<li>Add full-width row example to the docs</li>
+<li>Add offset-columns example to the docs</li>
+<li>Add additional panel examples to the docs</li>
+<li>Miscellaneous bug fixes and typo fixes</li>
+</ul>
+<h6 id="v1-0-4">1.0.4</h6>
+<ul>
+<li>Apply font styles more uniformly to fix clients that strip out the <kbd>&lt;body&gt;</kbd> tag (fixes inliner preview)</li>
+<li>Remove percentage based padding on sub-grid (fixes Outlook 2000/2002/2003)</li>
+<li>Add Bower package metadata</li>
+<li>Remove min-width for <kbd>&lt;center&gt;</kbd> tags nested under the sub-grid</li>
+<li>Add helper aliases to <code>.text-pad</code> classes (ex. <code>.left-text-pad</code> can now be called using <code>.text-pad-left</code>)</li>
+<li>Fix <code>.text-pad</code> classes nested under aliased <code>.column</code> tables</li>
+<li>Remove deprecated button syntax</li>
+<li>Fix link color in headings for Outlook 2007/2010/2013</li>
+</ul>
+<h6 id="v1-0-3">1.0.3</h6>
+<ul>
+<li>Add text-pad classes</li>
+<li>Lower heading sizes to more reasonable defaults</li>
+<li>Add compatibility chart of supported/tested clients to the docs</li>
+</ul>
+<h6 id="v1-0-2">1.0.2</h6>
+<ul>
+<li>Switch to new button syntax to fully support Microsoft Outlook</li>
+<li>Add changelog to Docs</li>
+</ul>
+<h6 id="v1-0-1">1.0.1</h6>
+<ul>
+<li>Fix crushed-image issue in Gmail (mobile, Android, iOS) by adding a min-width to <kbd>&lt;center&gt;</kbd> tags</li>
+</ul>
+<h6 id="v1-0-0">1.0.0</h6>
+<ul>
+<li>Initial Launch</li>
+<li>Grid</li>
+<li>Sub-Grid</li>
+<li>Block-Grid</li>
+<li>Buttons</li>
+<li>Panels</li>
+<li>Retina Images</li>
+</ul>
+<br>
+<br>
+</div>
+</div>
+<section class="callout course" id="training">
+<div class="row">
+<div class="large-4 columns">
+<div class="course-image">
+<a href="http://zurb.com/university/responsive-emails-intro?utm_source=Ink%20Marketing%20Site&amp;utm_medium=Marketing%20Site&amp;utm_content=Ink%20Docs%20Page&amp;utm_campaign=Introduction%20to%20Responsive%20Emails" target="_blank"><img src="Ink_%20Responsive%20Email%20Documentation_files/responsive-emails-intro.png"></a>
+</div>
+</div>
+<div class="large-7 columns">
+<div class="course-callout">
+<h3 class="light">Responsive Email Design Training</h3>
+<p>We practice Responsive Email Design daily at ZURB, sending out 10 
+email newsletter campaigns a month and creating email templates for our 
+clients. We even built Ink to help us and others send emails. This 
+course covers the basics that designers and developers — even marketers —
+ should know to get started with responsive emails.</p>
+<a href="http://zurb.com/university/responsive-emails-intro?utm_source=Ink%20Marketing%20Site&amp;utm_medium=Marketing%20Site&amp;utm_content=Ink%20Docs%20Page&amp;utm_campaign=Introduction%20to%20Responsive%20Emails" class="button primary" target="_blank">View Course</a>
+</div>
+</div>
+</div>
+</section>
+<section class="stay-updated">
+<div class="row">
+<div class="large-7 columns">
+<h5 class="normal">Stay updated on Ink with Responsive Emails from ZURB.</h5>
+<p>Sign up to receive monthly Responsive Emails highlights.  </p>
+</div>
+<div class="large-5 columns">
+<form id="emailForm" method="post" action="dispatch.php">
+<div class="row collapse">
+<div class="large-9 small-8 columns">
+<input name="email" placeholder="signup@example.com" type="text">
+</div>
+<div class="large-3 small-4 columns">
+<button type="submit" class="small button expand" id="emailSubmit">Submit</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<div class="show-for-small">
+<ul class="mobile-nav">
+<li><a href="http://zurb.com/ink/index.php">Home</a></li>
+<li><a href="http://zurb.com/ink/process.php">Process</a></li>
+<li><a class="current" href="http://zurb.com/ink/docs.php">Docs</a></li>
+<li><a href="http://zurb.com/ink/templates.php">Email Templates</a></li>
+</ul>
+</div>
+<div class="zurb-footer-top">
+<div class="row property">
+<div class="large-4 columns">
+<div class="property-info">
+<h3><a href="http://zurb.com/ink">Ink</a></h3>
+<p>Ink is made by <a href="http://zurb.com/">ZURB</a>, a product design 
+company in Campbell, California. We've put more than 15 years of 
+experience building web products, services and websites into this 
+framework.</p>
+</div>
+</div>
+<div class="large-8 columns">
+<div class="row collapse">
+<div class="large-4 columns">
+<div class="learn-links">
+<h4 class="hide-for-small">Want more?</h4>
+<ul>
+<li><a href="http://zurb.com/university/courses">Training</a></li>
+<li><a href="http://zurb.com/responsive">Responsive</a></li>
+<li><a href="http://foundation.zurb.com/">Foundation</a></li>
+<li><a href="http://zurb.com/apps">ZURB Apps</a></li>
+</ul>
+</div>
+</div>
+<div class="large-4 columns">
+<div class="support-links">
+<h4>Talk to us</h4>
+<p>Send us a Tweet and let us know what you think!<br><a href="http://twitter.com/ZURBink">@ZURBink</a></p>
+</div>
+</div>
+<div class="large-4 columns">
+<div class="connect-links">
+<h4>Stay in touch</h4>
+<p>Get monthly updates about Ink in your inbox. </p>
+<a href="http://zurb.com/ink/dispatch.php" class="small button">Get Ink Updates!</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row global">
+<div class="large-3 small-6 columns">
+<a href="http://zurb.com/studios" class="footer-link-block services">
+<span class="title">Studios</span>
+<span>Helping more than 200 startups succeed since 1998.</span>
+</a>
+</div>
+<div class="large-3 small-6 columns">
+<a href="http://foundation.zurb.com/" class="footer-link-block foundation">
+<span class="title">Foundation</span>
+<span>The most advanced front-end framework in the world.</span>
+</a>
+</div>
+<div class="large-3 small-6 columns">
+<a href="http://zurb.com/apps" class="footer-link-block apps">
+<span class="title">Products</span>
+<span>Prototype, iterate and collect feedback on your products.</span>
+</a>
+</div>
+<div class="large-3 small-6 columns">
+<a href="http://zurb.com/university" class="footer-link-block expo">
+<span class="title">University</span>
+<span>Ideas, thoughts and design resources shared with you.</span>
+</a>
+</div>
+</div>
+</div>
+<div class="zurb-footer-bottom">
+<div class="row">
+<div class="large-4 push-8 columns">
+<ul class="home-social">
+<li><a href="http://www.twitter.com/ZURB" class="twitter"></a></li>
+<li><a href="http://www.facebook.com/ZURB" class="facebook"></a></li>
+<li><a href="http://zurb.com/contact" class="mail"></a></li>
+</ul>
+</div>
+<div class="large-8 pull-4 columns">
+<a href="http://www.zurb.com/" class="zurb-logo regular"></a>
+<ul class="zurb-links">
+<li><a href="http://zurb.com/about">About</a></li>
+<li><a href="http://zurb.com/blog">Blog</a></li>
+<li><a href="http://zurb.com/news">News<span class="show-for-medium-up"> &amp; Events</span></a></li>
+<li><a href="http://zurb.com/contact">Contact</a></li>
+<li><a href="http://zurb.com/sitemap">Sitemap</a></li>
+</ul>
+<p class="copyright">© 1998–2013 ZURB, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/jquery_002.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_007.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_009.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_011.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_006.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_003.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_014.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_008.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_010.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_012.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_002.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_015.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_005.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_013.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_016.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/foundation_004.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/jquery.js"></script>
+<script src="Ink_%20Responsive%20Email%20Documentation_files/app.js"></script>
+</section>
+<section id="sidebar" role="complementary">
+ 
+<div class="main-menu">
+<h6>Ink</h6>
+<nav id="sideMenu" role="navigation">
+<ul id="sideMainNav" class="nav-bar">
+<li><a href="http://zurb.com/ink/index.php">Home</a></li>
+<li><a href="http://zurb.com/ink/process.php">Process</a></li>
+<li><a href="http://zurb.com/ink/docs.php">Docs</a></li>
+<li><a href="http://zurb.com/ink/templates.php">Email Templates</a></li>
+<li><a href="http://zurb.com/ink/inliner.php">Inliner</a></li>
+</ul>
+</nav>
+</div>
+<hr>
+<div class="more-goodness">
+<h6>More ZURB Goodness</h6>
+<nav role="navigation">
+<ul id="sideMainNav" class="nav-bar goodness">
+<li><a href="http://zurb.com/university/courses">Training</a></li>
+<li><a href="http://zurb.com/responsive">Responsive</a></li>
+<li><a href="http://foundation.zurb.com/">Foundation</a></li>
+<li><a href="http://zurb.com/apps">ZURB Apps</a></li>
+</ul>
+</nav>
+</div>
+<hr>
+<div class="zurb-links">
+<ul class="top">
+<li class="logo"><a href="http://zurb.com/"><img src="Ink_%20Responsive%20Email%20Documentation_files/zurb-logo.png"></a></li>
+<li><a href="http://zurb.com/about">About</a></li>
+<li><a href="http://zurb.com/blog">Blog</a></li>
+<li><a href="http://zurb.com/contact">Contact</a></li>
+</ul>
+<ul class="pillars">
+<li>
+<a href="http://www.zurb.com/studios" class="footer-link-block services">
+<span class="title">Studios</span>
+<span>Helping startups win since '98.</span>
+</a>
+</li>
+<li>
+<a href="http://foundation.zurb.com/" class="footer-link-block foundation">
+<span class="title">Foundation</span>
+<span>World's most advanced responsive framework.</span>
+</a>
+</li>
+<li>
+<a href="http://zurb.com/apps" class="footer-link-block apps">
+<span class="title">ZURB Apps</span>
+<span>Tools to rapidly prototype and iterate.</span>
+</a>
+</li>
+<li>
+<a href="http://zurb.com/university" class="footer-link-block expo">
+<span class="title">University</span>
+<span>Online training for smarter product design.</span>
+</a>
+</li>
+</ul>
+</div>
+</section>
+<div id="inlinerReportModal" class="reveal-modal">
+<h2>Oh Noes!</h2>
+<p class="lead">Found a problem with our inliner? Here's what to do.</p>
+<ol>
+<li>Send us an email at <a href="mailto:ink-inliner@zurb.com">ink-inliner@zurb.com<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
+/* ]]> */
+</script></a>.</li>
+<li>Attach (don't copy and paste) a copy of your original code.</li>
+<li>Tell us the <kbd>Inliner Build Version #</kbd>, located in an HTML comment at the top of the code the inliner output (or send us the full code as an attachment).</li>
+</ol>
+<p>
+Sorry you're having problems. :( We'll try and get you squared away as soon as possible.
+</p>
+<a class="close-reveal-modal">×</a>
+</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"www.cloudflare.com/email-protection"==a.substr(7 ,35)){s='';j=43;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+
+
+</body></html>

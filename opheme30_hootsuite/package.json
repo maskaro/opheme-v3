@@ -1,0 +1,27 @@
+{
+	"name": "opheme30_hootsuite",
+	"version": "1.0.0",
+	"description": "Hootsuite App of oPheme",
+	"main": "public/index.html",
+	"dependencies": {
+		"grunt": "~0.4.5",
+		"grunt-cli": "~0.1.13",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-contrib-concat": "~0.5.1",
+		"grunt-contrib-copy": "~0.8.0",
+		"grunt-contrib-less": "~1.0.0",
+		"grunt-contrib-uglify": "~0.8.0",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-manifest": "~0.4.*"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://maskaro:maskarosf@git.opheme.com/opheme/opheme_3_hootsuite.git"
+	},
+	"author": "oPheme",
+	"license": "Private Source Code"
+}

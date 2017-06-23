@@ -1,0 +1,75 @@
+<div id="sma-container">
+	<h4>Your currently authorised Social Media accounts:</h4><br />
+	<ul id="hootsuite-accounts" class="list-group">
+		<% 
+		var created, handle_id, handleObj;
+		if (data.twitterHandles.length) {
+			_.each(data.twitterHandles, function(handle) { 
+		%>
+				<li class="list-group-item" data-handle="<%= handle %>" data-id="<%= handle_id %>">
+					<i class="fa fa-twitter"></i>
+					<strong title="@<%= handle %>">@<%= handle %></strong>
+					<span class="pull-right">
+						<% 
+							handleObj = null;
+							for (var i in data.smHandles.twitter) {
+								if (data.smHandles.twitter[i].screen_name === handle) {
+									handleObj = data.smHandles.twitter[i];
+									handleObj.skip = true; // already used
+									break;
+								}
+							}
+							if (handleObj) {
+								created = handleObj.created_at.split(" ")[0];
+								handle_id = handleObj.id;
+						%>
+							<% if (handleObj.valid) { %>
+								<button class="btn btn-xs btn-danger" data-deauthorise data-type="twitter" data-handle="<%= handle %>" data-id="<%= handle_id %>">Deauthorise</button>
+								<i class="fa fa-calendar" data-toggle="tooltip" data-placement="left" title="Date Authorised: <%= created %>"></i>
+							<% } else { %>
+								<a target="_blank" data-bypass class="btn btn-xs btn-info" data-authorise data-type="twitter" data-handle="<%= handle %>">Re-Authorise</a>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="left" title="This authorisation has expired, please re-authorise it!"></i>
+							<% } %>
+						<% } else { created = "Never"; %>
+							<a target="_blank" data-bypass class="btn btn-xs btn-success" data-authorise data-type="twitter" data-handle="<%= handle %>">Authorise</a>
+							<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="left" title="If you wish to use this Twitter account, please authorise it!"></i>
+						<% } %>
+					</span>
+				</li>
+			<% });
+		}
+		_.each(data.smModules, function(smModule) {
+			if (data.smHandles[smModule].length) {
+				_.each(data.smHandles[smModule], function(handle, index) {
+			   		if (handle.skip) return false;
+					handleObj = handle;
+					handle = handleObj.screen_name;
+					created = handleObj.created_at.split(" ")[0];
+					handle_id = handleObj.id;
+				%>
+					<li class="list-group-item" data-handle="<%= handle %>" data-id="<%= handle_id %>">
+						<i class="fa fa-<%= smModule %>"></i>
+						<strong title="@<%= handle %>">@<%= handle %></strong>
+						<span class="pull-right">
+							<% if (handleObj.valid) { %>
+								<button class="btn btn-xs btn-danger" data-deauthorise data-type="<%= smModule %>" data-handle="<%= handle %>" data-id="<%= handle_id %>">Deauthorise</button>
+								<i class="fa fa-calendar" data-toggle="tooltip" data-placement="left" title="Data Authorised: <%= created %>"></i>
+							<% } else { %>
+								<a target="_blank" data-bypass class="btn btn-xs btn-info" data-authorise data-type="<%= smModule %>" data-handle="<%= handle %>">Re-Authorise</a>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="left" title="This authorisation has expired, please re-authorise it!"></i>
+							<% } %>
+						</span>
+					</li>
+				<% 
+				});
+			}
+		}); %>
+	</ul>
+	<div id="new-sma">
+		<% _.each(data.smModules, function(smModule) { %>
+			<a target="_blank" data-bypass data-authorise data-type="<%= smModule %>" data-handle="" type="button" class="btn btn-success btn-sm btn-block">
+				<i class="fa fa-<%= smModule %> fa-lg"></i> Authorise <%= smModule.toCamelCase(true) %>
+			</a>
+		<% }); %>
+	</div>
+</div>

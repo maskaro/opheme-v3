@@ -1,0 +1,17 @@
+!.gitignore
+.DS_Store
+/nbproject
+/bower_components
+/node_modules
+/js_sources/__generated
+/css_sources/__generated
+/public
+!/public/.htaccess
+!/public/favicon.ico
+!/public/images/*
+!/public/images/hootsuite/*
+.vagrant
+*.log
+.idea
+config.yaml
+.brackets.json

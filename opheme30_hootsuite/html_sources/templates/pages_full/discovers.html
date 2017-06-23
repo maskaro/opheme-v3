@@ -1,0 +1,10 @@
+<div id="discovers-container" class="container">
+	<div class="row">
+		<% if ( typeof renderDiscoversView !== "undefined" ) { %>
+			<%= renderDiscoversView({ data: data }) %>
+		<% } %>
+		<% if ( typeof renderDiscoversSetup !== "undefined" ) { %>
+			<%= renderDiscoversSetup({ data: data }) %>
+		<% } %>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="alert alert-info" role="alert">
+		<h3 class="text-center">Welcome to Opheme!</h3><p>Enter your email address and password to log in or click on Register button if you don't have an account.</p>
+	</div>
+	<div class="panel-group" id="login-forgot-register">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title" data-toggle="collapse" data-parent="#login-forgot-register" href="#login-forgot-panel">
+					Already have an account?
+				</div>
+			</div>
+			<div id="login-forgot-panel" class="panel-collapse collapse in">
+				<div class="panel-body">
+                    <%= renderLogin() %>
+                </div>
+				<% /*
+                <div id="forgot-panel-header" class="panel-footer">
+                    Forgot Password
+                </div>
+                <div class="panel-body" style="display:none">
+					<= renderForgot() >
+                </div>
+				*/ %>
+			</div>
+		</div>	
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title" data-toggle="collapse" data-parent="#login-forgot-register" href="#register-panel">
+					Register
+				</div>
+			</div>
+			<div id="register-panel" class="panel-collapse collapse">
+				<div class="panel-body">
+					<%= renderRegister() %>
+				</div>
+			</div>
+		</div>
+		<%= renderTerms() %>
+	</div>
+</div>

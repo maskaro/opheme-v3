@@ -1,0 +1,26 @@
+<div id="account-container" class="container">
+    <div class="row">
+        <div id="account-information" class="col-sm-6 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h3>Account Information</h3>
+                    </div>
+                </div>
+                <%= renderUserAccount({ user: user }) %>
+            </div>
+        </div>
+        <div id="authorisation-status" class="col-sm-6 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h3>Social Media Authorisation</h3>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <%= renderAuthorisation() %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

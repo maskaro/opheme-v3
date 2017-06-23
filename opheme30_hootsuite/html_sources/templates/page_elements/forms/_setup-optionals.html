@@ -1,0 +1,77 @@
+<div id="refinementsWrapper">
+	<a data-bypass id="optionToggler" class="btn btn-block btn-primary" data-toggle="collapse" data-target="#discoverOptions">Refine Discover (optional)</a>
+	<div id="discoverOptions" class="collapse">
+		<div class="form-group">
+			<label class="control-label" for="filter" title="Give your Discover one word or a phrase to look for">Enter Search Terms (words or a phrases) - Hit Return/Enter after each one</label>
+			<select multiple class="form-control" id="filter" name="filter" data-role="tagsinput"></select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">When would you like the Discover to start and end?</label>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group dateTimePair">
+						<div class="input-group">
+							<span class="input-group-addon" for="startDateField">From:</span>
+							<input class="form-control" type="text" value="" id="startDateField" name="date_start" placeholder="click to set" data-date-format="dd-mm-yyyy">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" for="startDateTimeField">At:</span>
+							<input class="form-control ui-timepicker-input startTimeField" id="startDateTimeField" type="text" value="" name="date_time_start" placeholder="9:00am" autocomplete="off">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group dateTimePair">
+						<div class="input-group">
+							<span class="input-group-addon" for="endDateField">To:</span>
+							<input class="form-control" type="text" value="" id="endDateField" name="date_end" placeholder="click to set" data-date-format="dd-mm-yyyy">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" for="endDateTimeField">At:</span>
+							<input class="form-control ui-timepicker-input startTimeField" id="endDateTimeField" type="text" value="" name="date_time_end" placeholder="17:00pm" autocomplete="off">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="checkbox-container" id="checkbox-group-days">
+				<label>Which days of the week would you like the Discover to be active on?</label>
+				<div class="checkbox-wrapper everyday">
+					<input type="checkbox" id="day-all" value="All">
+					<label for="day-all" class="checkbox" id="day-all">Every Day</label>
+				</div>
+				<% 
+					var days = {"Mon": "Monday", "Tue": "Tuesday", "Wed": "Wednesday", "Thu": "Thursday", "Fri": "Friday", "Sat": "Saturday", "Sun": "Sunday"}; 
+					_.each(days, function(dayFull, dayAbbr) {
+				%>
+					<div class="checkbox-wrapper">
+						<input type="checkbox" id="day-<%= dayFull.toLowerCase() %>" name="days[]" value="<%= dayFull %>">
+						<label for="day-<%= dayFull.toLowerCase() %>" class="checkbox"><%= dayAbbr %></label>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+		<div id="timeIntervals">
+			<label>What times would you like the Discover to run between?</label>
+			<div id="ti1" class="time-interval">
+				<div class="form-group timeWrapper">
+					<div class="input-group">
+						<span class="input-group-addon">Start:</span>
+						<input class="form-control ui-timepicker-input startTimeField" type="text" value="" name="time_start[]" placeholder="9:00am" autocomplete="off">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">End:</span>
+						<input class="form-control ui-timepicker-input endTimeField" type="text" value="" name="time_end[]" placeholder="5:00pm" autocomplete="off">
+					</div>
+					<button class="remove-timeinterval btn btn-link btn-danger"><i class="fa fa-remove"></i>
+					</button>
+				</div>
+			</div>
+			<button id="addInterval" class="btn btn-xs btn-success"><i class="fa fa-plus"></i> Add another interval</button>
+			<p class="text-danger" style="display: none;">
+				You have reached time intervals limit
+			</p>
+		</div>
+	</div>
+</div>

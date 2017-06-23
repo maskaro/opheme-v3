@@ -1,0 +1,49 @@
+{
+    "name": "oPheme-Hootsuite",
+    "version": "3.0",
+    "description": "oPheme Social Media Marketing Tool for Hootsuite",
+    "main": "public/index.html",
+    "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+    "keywords": [
+    "opheme_hootsuite"
+  ],
+    "authors": [
+    "Opheme Limited"
+  ],
+    "license": "Proprietary Code",
+    "homepage": "http://www.opheme.com",
+    "private": true,
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "requirejs": "~2.1.*",
+        "requirejs-text": "2.0.*",
+        "jquery-validate": "~1.13.*",
+        "timeago": "~1.4.*",
+        "tooltipster": "~3.3.*",
+        "backbone": "~1.1.*",
+        "underscore": "~1.7.*",
+        "jquery-ui": "~1.11.*",
+        "jquery.fileDownload": "~1.4.*",
+        "jquery.scrollTo": "~1.4.*",
+        "bootstrap-css": "~3.2.*",
+		"jquery-timepicker-jt": "1.6.*",
+        "components-font-awesome": "~4.3.*",
+		"parsleyjs": "2.0.*",
+		"jQuery-Storage-API": "1.7.*"
+    },
+    "resolutions": {
+        "jquery-ui": "~1.11.*"
+    }
+}

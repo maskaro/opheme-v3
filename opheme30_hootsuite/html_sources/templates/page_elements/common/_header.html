@@ -1,0 +1,13 @@
+<% if ( data.user.id ) { %>
+	<% if ( data.user.is_valid ) { %>
+		<%= renderNavigation({ data: data }) %>
+	<% } %>
+<% } else { %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<img id="large-logo" class="img-responsive" src="/images/oPheme-logo.png" alt="Logo">
+			</div>
+		</div>
+	</div>
+<% } %>

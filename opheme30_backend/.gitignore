@@ -1,0 +1,16 @@
+!.gitignore
+nbproject
+nbproject/*
+.DS_Store
+/templates_c
+/.gradle
+settings.inc.php
+*.txt
+*.count
+*.log
+*.tpl.php
+.idea
+.brackets.json
+config.yaml
+/node_modules
+

@@ -1,0 +1,228 @@
+---
+vagrantfile-local:
+    vm:
+        box: puphpet/ubuntu1404-x64
+        box_url: puphpet/ubuntu1404-x64
+        hostname: 'hootsuite.opheme.com'
+        memory: '512'
+        cpus: '1'
+        chosen_provider: virtualbox
+        network:
+            private_network: 192.168.20.30
+            forwarded_port:
+                5cYpE27wVKs0:
+                    host: '8078'
+                    guest: '22'
+        post_up_message: ''
+        provider:
+            virtualbox:
+                modifyvm:
+                    natdnshostresolver1: on
+            vmware:
+                numvcpus: 1
+            parallels:
+                cpus: 1
+        provision:
+            puppet:
+                manifests_path: puphpet/puppet
+                manifest_file: site.pp
+                module_path: puphpet/puppet/modules
+                options:
+                    - '--verbose'
+                    - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
+                    - '--parser future'
+        synced_folder:
+            Ui1ADWoN8uPT:
+                owner: www-data
+                group: www-data
+                source: '~/Documents/Projects/Git Projects/oPheme'
+                target: /var/www/hootsuite_app
+                sync_type: default
+                rsync:
+                    args:
+                        - '--verbose'
+                        - '--archive'
+                        - '-z'
+                    exclude:
+                        - .vagrant_puphpet_local/
+                    auto: 'false'
+        usable_port_range:
+            start: 10200
+            stop: 10500
+    ssh:
+        host: null
+        port: null
+        private_key_path: null
+        username: vagrant
+        guest_port: null
+        keep_alive: true
+        forward_agent: false
+        forward_x11: false
+        shell: 'bash -l'
+    vagrant:
+        host: detect
+server:
+    install: '1'
+    packages:
+        - memcached
+users_groups:
+    install: '1'
+    groups: {  }
+    users: {  }
+cron:
+    install: '1'
+    jobs: {  }
+firewall:
+    install: '1'
+    rules: {  }
+apache:
+    install: '0'
+nginx:
+    install: '1'
+    settings:
+        default_vhost: 1
+        proxy_buffer_size: 128k
+        proxy_buffers: '4 256k'
+    upstreams: {  }
+    vhosts:
+        rkopbyfdpyku:
+            proxy: ''
+            server_name: hootsuite.opheme.com
+            www_root: /var/www/hootsuite_app/public
+            listen_port: '80'
+            index_files:
+                - index.php
+            client_max_body_size: 1m
+            locations:
+                etzzjviwywdq:
+                    location: /
+                    try_files:
+                        - $uri
+                        - $uri/
+                        - index.php
+                        - /index.php$is_args$args
+                    fastcgi: ''
+                    fastcgi_index: ''
+                    fastcgi_split_path: ''
+                3jlpxe8rptdt:
+                    location: '~ \.php$'
+                    try_files:
+                        - $uri
+                        - $uri/
+                        - index.php
+                        - /index.php$is_args$args
+                    fastcgi: '127.0.0.1:9000'
+                    fastcgi_index: index.php
+                    fastcgi_split_path: '^(.+\.php)(/.*)$'
+                    fast_cgi_params_extra:
+                        - 'SCRIPT_FILENAME $request_filename'
+                        - 'APP_ENV dev'
+                6zhvhtruiicx:
+                    location: '~ index\.html'
+                    try_files:
+                        - index.php
+                        - /index.php$is_args$args
+                    fastcgi: ''
+                    fastcgi_index: ''
+                    fastcgi_split_path: ''
+            ssl: '1'
+            ssl_cert: /var/www/hootsuite_app/SSL_FILES/cert_nginx.crt
+            ssl_key: /var/www/hootsuite_app/SSL_FILES/cert.key
+            ssl_port: '443'
+            rewrite_to_https: '1'
+            spdy: '1'
+php:
+    install: '1'
+    version: '56'
+    composer: '1'
+    composer_home: ''
+    modules:
+        php:
+            - cli
+            - intl
+            - mcrypt
+            - curl
+            - geoip
+            - memcache
+            - memcached
+            - mysql
+        pear:
+            - Auth_SASL2
+        pecl:
+            - pecl_http
+    ini:
+        display_errors: On
+        error_reporting: '-1'
+        session.save_path: /var/lib/php/session
+        date.timezone: UTC
+    mod_php: 0
+hhvm:
+    install: '0'
+xdebug:
+    install: '1'
+    settings:
+        xdebug.default_enable: '1'
+        xdebug.remote_autostart: '0'
+        xdebug.remote_connect_back: '1'
+        xdebug.remote_enable: '1'
+        xdebug.remote_handler: dbgp
+        xdebug.remote_port: '9000'
+xhprof:
+    install: '0'
+wpcli:
+    install: '0'
+drush:
+    install: '0'
+ruby:
+    install: '1'
+    versions: {  }
+nodejs:
+    install: '0'
+    npm_packages:
+        - bower
+        - grunt
+        - grunt-cli
+python:
+    install: '1'
+    packages: {  }
+    versions: {  }
+mysql:
+    install: '1'
+    settings:
+        version: '5.6'
+        root_password: opheme135!
+        override_options: {  }
+    adminer: 0
+    users:
+        qqgAMqvY1oYo:
+            name: hootsuite@localhost
+            password: hootsuite135!
+    databases:
+        kyojFDgzS6yk:
+            name: hootsuite
+            sql: /var/www/hootsuite_app/mysql_db.sql
+    grants:
+        o5fSjHaFMObR:
+            user: hootsuite@localhost
+            table: 'hootsuite.*'
+            privileges:
+                - ALL
+postgresql:
+    install: '0'
+sqlite:
+    install: '0'
+mongodb:
+    install: '0'
+redis:
+    install: '0'
+mailcatcher:
+    install: '0'
+beanstalkd:
+    install: '0'
+rabbitmq:
+    install: '0'
+elastic_search:
+    install: '0'
+solr:
+    install: '0'
+

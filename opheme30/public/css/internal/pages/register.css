@@ -1,0 +1,17 @@
+#register {
+	width: 374px;
+	margin: 0 auto 80px;
+}
+
+#register .panel-title {
+	cursor: pointer;
+}
+
+@media (max-width: 479px) {
+	body { padding-top: 0px; }
+	form { min-height: 528px !important; }
+	#large-logo { margin: 20px auto; max-width: 100%; }
+	#register {
+		width: 290px;
+	}
+}

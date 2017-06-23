@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE database SYSTEM "file:///System/Library/DTDs/CoreData.dtd">
+
+<database>
+    <databaseInfo>
+        <version>134481920</version>
+        <UUID>E4713C9E-09EB-4EF8-B923-5653D05AAB0D</UUID>
+        <nextObjectID>106</nextObjectID>
+        <metadata>
+            <plist version="1.0">
+                <dict>
+                    <key>NSPersistenceFrameworkVersion</key>
+                    <integer>526</integer>
+                    <key>NSStoreModelVersionHashes</key>
+                    <dict>
+                        <key>Asset</key>
+                        <data>
+		tyQotsO8NDvt1XE0n7ISUiSHKjen9suD2Y4EXGRd56I=
+		</data>
+                        <key>Folder</key>
+                        <data>
+		6AflOHiDpCFdpGAdI0h5t/eykc0B/9DCQLuGcURzmWI=
+		</data>
+                        <key>List</key>
+                        <data>
+		f4nmFsXfFk8V4CSJFMVZeV0UVaEd8d49csHd+yfBOO4=
+		</data>
+                        <key>Search</key>
+                        <data>
+		/Di3N1cVqPFGCxVmoUJ3wQ51ctkJsx+xJfuxAdNqToc=
+		</data>
+                        <key>Snippet</key>
+                        <data>
+		4X/rsY/TA70Pj9wVlkKWOTV5xo34weRxc8LfSD+NVD8=
+		</data>
+                        <key>Tag</key>
+                        <data>
+		tynbpfPyYUACFlBsnCbwUvDeu/vffT4ux8pptcOescY=
+		</data>
+                    </dict>
+                    <key>NSStoreModelVersionHashesVersion</key>
+                    <integer>3</integer>
+                    <key>NSStoreModelVersionIdentifiers</key>
+                    <array>
+                        <string></string>
+                    </array>
+                </dict>
+            </plist>
+        </metadata>
+    </databaseInfo>
+    <object type="SEARCH" id="z102">
+        <attribute name="sort" type="int16">-1</attribute>
+        <attribute name="name" type="string">All Snippets</attribute>
+        <attribute name="expanded" type="bool">0</attribute>
+        <relationship name="parent" type="1/1" destination="FOLDER"></relationship>
+        <relationship name="children" type="0/0" destination="FOLDER"></relationship>
+    </object>
+    <object type="ASSET" id="z103">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">Asset.php</attribute>
+        <attribute name="content" type="binary">PD9waHAKCnBocGluZm8oKTsKCj8+
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z104"></relationship>
+    </object>
+    <object type="SNIPPET" id="z104">
+        <attribute name="name" type="string">PHPInfo</attribute>
+        <attribute name="modified" type="date">402016886.87141197919845581055</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z103"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG"></relationship>
+    </object>
+    <object type="ASSET" id="z105">
+        <attribute name="sort" type="int32">-1</attribute>
+        <attribute name="path" type="string">Asset.php</attribute>
+        <attribute name="content" type="binary">REI6Omxpc3RlbiggZnVuY3Rpb24oJHNxbCkgewoJdmFyX2R1bXAoICRzcWwgKTsKfSApOw==
+</attribute>
+        <relationship name="snippet" type="1/1" destination="SNIPPET" idrefs="z106"></relationship>
+    </object>
+    <object type="SNIPPET" id="z106">
+        <attribute name="name" type="string">Laravel DB Listen</attribute>
+        <attribute name="modified" type="date">444677908.83027601242065429688</attribute>
+        <attribute name="locked" type="bool">0</attribute>
+        <relationship name="list" type="1/1" destination="LIST"></relationship>
+        <relationship name="assets" type="0/0" destination="ASSET" idrefs="z105"></relationship>
+        <relationship name="tags" type="0/0" destination="TAG"></relationship>
+    </object>
+</database>

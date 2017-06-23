@@ -1,0 +1,154 @@
+<% /* Message */ %>
+<% /* If Interaction, then move the message to #interactions tab and add "interaction" class to "hs_message" */ %>
+
+<div class="hs_message<% if (message.interactions) { %> hasInteractions<% } %><% if (message.isNew) { %> hs_isNewMessage<% } else { %> hs_isOldMessage<% } %>" id="<%= message.dom_id %>" data-backend-id="<%= message.backend_message_id %>">
+	
+	<% /* Profile Picture */ %>
+	<div class="hs_avatar">
+		<img class="hs_avatarImage" src="<%= message.user.profile_image_url %>" alt="<%= message.user.screen_name %>'s Avatar">
+		<a data-bypass target="_blank" href="<%= message.user.profile_url %>" class="hs_avatarLink" title="<%= message.user.screen_name %>" data-socialmedia="<%= message.social_media_type %>"></a>
+	</div>
+	
+	<% /* Message Content */ %>
+	<div class="hs_content">
+		
+		<% /* User Name */ %>
+		<a data-bypass target="_blank" href="<%= message.user.profile_url %>" class="hs_userName" title="<%= message.user.screen_name %>" data-socialmedia="<%= message.social_media_type %>">
+			<i class="fa fa-<%= message.social_media_type %>"></i> <%= message.user.screen_name %>
+		</a>
+
+		<% /* Klout Score */ %>
+		<% if (!isNaN(parseFloat(message.klout_score)) && message.klout_score > 0) { %>
+			<span class="klout-wrapper" data-toggle="tooltip" data-placement="bottom" title="Klout Score"><img src="/images/klout-score.png" alt="Klout Score - <%= message.klout_score %>"><span class="score"><%= message.klout_score %></span></span>
+		<% } %>
+		
+		<% /* Message Actions */ %>
+		<div class="actions">
+			<% /* Once the action has been clicked the class .clicked should be added to relevant i element */ %>
+			<i class="fa fa-lg fa-<%= message.social_media_type %> follow<% if (smHandles[message.social_media_type].userFollows[message.user.screen_name]) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="<% if (smHandles[message.social_media_type].userFollows[message.user.screen_name]) { %>Un-<% } %>Follow"></i>
+			<i class="fa fa-lg fa-reply" data-toggle="tooltip" data-placement="bottom" title="Reply"></i>
+			<% if (message.social_media_type === "twitter") { %>
+				<i class="fa fa-lg fa-retweet<% if (message.isRetweeted) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="Retweet"></i>
+			<% } %>
+			<i class="fa fa-lg fa-star<% if (message.isFavourited) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="<% if (message.isFavourited) { %>Un-<% } %><% if (message.social_media_type === 'instagram') { %>Like<% } else { %>Favourite<% } %>"></i>
+		</div>
+		
+		<% /* Date when the message was posted */ %>
+		<a data-bypass class="hs_postTime<% if (message.isNew) { %> hs_isNewMessage<% } else { %> hs_isOldMessage<% } %>" href="<%= message.source_link %>" target="_blank" title="<%= message.timestamp %>" data-toggle="tooltip" data-placement="bottom"><%= message.timestamp %></a>
+
+		<% /* Message Text */ %>
+		<div class="hs_contentText">
+			
+			<% /* Message Body */ %>
+			<p><%= message.text %></p>
+			
+			<% if (message.images.length) { %>
+				<% /* Images */ %>
+				<div class="hs_mediaGallery<% if (message.images.length > 1) { %> media<%= message.images.length %>Item<% } %>">
+					<% _(message.images).each(function (image, index) { if (index === 4) return; %>
+						<div class="img-container hs_attachedMedia<% if (message.images.length > 1) { %><%= (index + 1) %><% } %>">
+							<a data-bypass target="_blank" target="_blank" href="<%= message.source_link %>">
+								<% /* Single images are cropped to a 16:9 ratio */ %>
+								<img src="<%= image.url %>" alt="<%= message.social_media_type.toCamelCase(true) %> Image">
+								<% /* Image placeholder text for before load */ %>
+								<span class="placeholder"><i class='fa fa-cog fa-2x fa-spin my-spinner'></i></span>
+							</a>
+						</div>
+					<% }); %>
+				</div>
+			<% } %>
+
+			<% if (message.videos.length) { %>
+				<% /* Video link */ %>
+				<a data-bypass target="_blank" target="_blank" href="<%= message.source_link %>" class="hs_mediaGallery hs_postAttachment hs_videoSiteLink">
+					<div class="hs_attachedMedia">
+						<img src="<%= message.videos[0].image_url %>" alt="<%= message.social_media_type.toCamelCase(true) %> Video">
+					</div>
+					<span class="hs_postTitle"><%= message.social_media_type.toCamelCase(true) %> Video<% /* message.videos[0].title */ %></span>
+					<% /* <span class="hs_postUrl"><= message.videos[0].url ></span> */ %>
+				</a>
+			<% } %>
+
+		</div>
+		
+	</div>
+	
+	<% if (message.interactions) { %>
+
+		<div class="hs_commentsHeader">
+			<% /* The amount of interactions in total */ %>
+			<span class="hs_commentsCounter" data-toggle="tooltip" data-placement="left" title="Click to View Interactions">
+				<span class="icon-app-dir x-comment"></span>
+				<span class="hs_commentsCounterText">
+					<%= message.interactions.messages.length %>
+				</span>
+			</span>
+			<% /* When "View previous Interactions" clicked it will push down latest comments down and load 4 older interactions */ %>
+			<% /* <a data-bypass class="hs_commentsViewPrevious"><span class="icon-app-dir x-comment"></span>View previous Interactions</a> */ %>
+		</div>
+
+		<% /* Message Interactions */ %>
+		<div class="hs_comments">
+				
+			<% _(message.interactions.messages).each(function (interaction) { %>
+				
+				<% /* Interaction Message */ %>
+				<div class="hs_comment<% if (interaction.isNew) { %> hs_isNewMessage<% } else { %> hs_isOldMessage<% } %>" data-id="<%= interaction.message_id %>">
+					
+					<% if (interaction.user.screen_name !== smHandles[message.social_media_type].screen_name) { %>
+						<div class="hs_messageOptions">
+							<div class="actions">
+							    <i class="fa fa-lg fa-<%= message.social_media_type %> follow<% if (smHandles[message.social_media_type].userFollows[message.user.screen_name]) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="<% if (smHandles[message.social_media_type].userFollows[message.user.screen_name]) { %>Un-<% } %>Follow"></i>
+							    <i class="fa fa-lg fa-reply" data-toggle="tooltip" data-placement="bottom" title="Reply"></i>
+								<% if (interaction.social_media_type === "twitter") { %>
+									<i class="fa fa-lg fa-retweet<% if (interaction.isRetweeted) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="Retweet"></i>
+								<% } %>
+							    <i class="fa fa-lg fa-star<% if (interaction.isFavourited) { %> clicked<% } %>" data-toggle="tooltip" data-placement="bottom" title="<% if (interaction.isFavourited) { %>Un-<% } %><% if (interaction.social_media_type === 'instagram') { %>Like<% } else { %>Favourite<% } %>"></i>
+							</div>
+						</div>
+					<% } %>
+
+					<div class="hs_commentAvatar">
+						<img class="hs_commentAvatarImage" src="<%= interaction.user.profile_image_url %>" alt="<%= interaction.user.screen_name %>'s Avatar">
+						<a data-bypass target="_blank" href="<%= interaction.user.profile_url %>" class="hs_commentAvatarLink" title="<%= interaction.user.screen_name %>"></a>
+					</div>
+
+					<div class="hs_commentContent">
+						<a data-bypass target="_blank" href="<%= interaction.user.profile_url %>" class="hs_commentUserName" title="<%= interaction.user.screen_name %>"><%= interaction.user.screen_name %></a>
+						<% if (!isNaN(parseFloat(interaction.klout_score)) && interaction.klout_score > 0) { %>
+							<span class="klout-wrapper" data-toggle="tooltip" data-placement="bottom" title="Influence"><img src="/images/klout-score.png" alt="Klout Score - <%= interaction.klout_score %>"><span class="score"><%= interaction.klout_score %></span></span>
+						<% } %>
+						<a data-bypass class="hs_commentPostTime<% if (interaction.isNew) { %> hs_isNewMessage<% } else { %> hs_isOldMessage<% } %>" href="<%= interaction.source_link %>" target="_blank" title="<%= interaction.timestamp %>" data-toggle="tooltip" data-placement="bottom"><%= interaction.timestamp %></a>
+						<div class="hs_commentContentText">
+							<p><%= interaction.text %></p>
+						</div>
+					</div>
+					
+				</div>
+						
+			<% }); %>
+				
+		</div>
+		
+	<% } %>
+
+	<% /* Add an Interaction */ %>
+	<% /*
+	<div class="hs_comment">
+		<div class="hs_commentAvatar">
+			<img class="hs_commentAvatarImage" src="<= smHandles[message.social_media_type].profile_url >" alt="Avatar">
+			<a data-bypass target="_blank" href="<= smHandles[message.social_media_type].profile_url >" class="hs_commentAvatarLink" title="<= smHandles[message.social_media_type].screen_name >"></a>
+		</div>
+
+		<div class="hs_commentContent">
+			<div class="hs_commentContentText">
+				<textarea class="hs_commentEntryArea" data-placeholder="Send a reply..." title="Press enter ↵ to submit"></textarea>
+				<div class="hs_commentActions">
+					<a data-bypass class="hs_btnCtaSml hs_btnTypeSubmit">Reply</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	*/ %>
+		
+</div>

@@ -1,0 +1,1 @@
+<?php $client_key = "6Gb2CldkeZWOp6ZdScSQxyzOgqMRWZ4WURezWB2R";

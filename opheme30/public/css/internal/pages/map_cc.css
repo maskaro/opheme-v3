@@ -1,0 +1,19 @@
+#map_cc {
+	position: absolute;
+	background-color: #fff;
+	right: 0px;
+	top: 0px;
+	z-index: 1000;
+	padding: 5px;
+	display: none;
+}
+#map_cc a {
+	text-decoration: none;
+	font-size: 25px;
+}
+#map_cc .fa-compress {
+	display: none;
+}
+._opheme_bubbleContainer {
+	z-index: 5000;
+}

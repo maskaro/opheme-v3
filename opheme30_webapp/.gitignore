@@ -1,0 +1,10 @@
+!.gitignore
+.DS_Store
+/nbproject
+/bower_components
+/node_modules
+/js_sources/__generated
+/public/css
+/public/fonts
+/public/js
+/public/templates
